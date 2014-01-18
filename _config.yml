@@ -1,0 +1,14 @@
+
+# github's jekyll override
+#safe: true
+lsi: false
+pygments: true
+
+# here
+permalink: /:year-:month-:day-:title.html
+exclude: [ 'README.md', 'Rakefile', 'TODO.txt', 'Gemfile', 'Gemfile.lock' ]
+
+#markdown: redcarpet
+#kramdown:
+#  auto_ids: true
+
