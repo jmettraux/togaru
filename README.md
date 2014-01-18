@@ -12,9 +12,11 @@ convert dragon.gif -resize 64  resize_dragon.gif # width
 convert dragon.gif -resize x64  resize_dragon.gif # xheight
 ```
 
-## license
+## licenses and copyrights
 
-All the photos on this site/repository are copyright Antonio Garcia Algarra.
+The various open source tools used obey their own licenses and copyrights.
 
-The rest is under a MIT license.
+All the photographies on this site/repository are copyright Antonio Garcia Algarra.
+
+The textual content is copyright Antonia Garcia Algarra.
 
