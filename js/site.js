@@ -21,23 +21,25 @@ var Tg = (function() {
       $show.find('.fa-play').hide();
       $show.find('.fa-pause').show();
     });
-    $('.controls > .fa-step-backward').on('click', function(ev) {
-      var $show = $(ev.target).closest('.slideshow');
+
+    $(
+      '.controls > .fa-step-backward, .controls > .fa-step-forward'
+    ).on('click', function(ev) {
+
+      var $target = $(ev.target);
+      var $show = $target.closest('.slideshow');
+
       if ($show.hasClass('sliding')) return;
+
       var $img = $show.find('img:visible');
-      var $prev = $img.prev('img');
-      if ( ! $prev[0]) return;
+      var $succ = null;
+      if ($target.hasClass('fa-step-forward')) $succ = $img.next('img');
+      else $succ = $img.prev('img');
+
+      if ( ! $succ[0]) return;
+
       $img.hide();
-      $prev.show();
-    });
-    $('.controls > .fa-step-forward').on('click', function(ev) {
-      var $show = $(ev.target).closest('.slideshow');
-      if ($show.hasClass('sliding')) return;
-      var $img = $show.find('img:visible');
-      var $next = $img.next('img');
-      if ( ! $next[0]) return;
-      $img.hide();
-      $next.show();
+      $succ.show();
     });
 
     window.setTimeout(self.nextSlide, 3 * 1000);
