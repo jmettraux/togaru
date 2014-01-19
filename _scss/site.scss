@@ -98,6 +98,9 @@ div.menu {
     margin: 0 0.2em;
     &:hover { opacity: 0.5; }
   }
+  .current {
+    opacity: 0.5;
+  }
 }
 
 div.page {

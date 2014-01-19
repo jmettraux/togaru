@@ -2323,22 +2323,26 @@ div.menu a {
 div.menu a:hover {
   opacity: 0.5;
 }
+/* line 101, ../_scss/site.scss */
+div.menu .current {
+  opacity: 0.5;
+}
 
-/* line 103, ../_scss/site.scss */
+/* line 106, ../_scss/site.scss */
 div.page {
   height: 100%;
   min-height: 100%;
   position: relative;
 }
 
-/* line 109, ../_scss/site.scss */
+/* line 112, ../_scss/site.scss */
 div.main {
   width: 850px;
   margin: 0 auto;
   padding-bottom: 80px;
 }
 
-/* line 115, ../_scss/site.scss */
+/* line 118, ../_scss/site.scss */
 div.footer {
   position: absolute;
   background-color: grey;
@@ -2347,41 +2351,41 @@ div.footer {
   width: 100%;
   padding-top: 2em;
 }
-/* line 123, ../_scss/site.scss */
+/* line 126, ../_scss/site.scss */
 div.footer a {
   color: black;
 }
 
-/* line 128, ../_scss/site.scss */
+/* line 131, ../_scss/site.scss */
 .nihongo {
   font-size: 87%;
 }
 
-/* line 132, ../_scss/site.scss */
+/* line 135, ../_scss/site.scss */
 .entries {
   display: table;
 }
 
-/* line 135, ../_scss/site.scss */
+/* line 138, ../_scss/site.scss */
 .entry {
   display: table-row;
 }
-/* line 137, ../_scss/site.scss */
+/* line 140, ../_scss/site.scss */
 .entry .photo {
   display: table-cell;
 }
-/* line 139, ../_scss/site.scss */
+/* line 142, ../_scss/site.scss */
 .entry .photo img {
   width: 100px;
   vertical-align: text-top;
 }
-/* line 144, ../_scss/site.scss */
+/* line 147, ../_scss/site.scss */
 .entry .text {
   display: table-cell;
   padding-left: 1em;
   text-align: left;
 }
-/* line 148, ../_scss/site.scss */
+/* line 151, ../_scss/site.scss */
 .entry .text h1 {
   font-size: 120%;
 }

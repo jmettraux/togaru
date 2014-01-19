@@ -2,24 +2,38 @@
 <div class="menu">
   {% if page.title != "home" %}
     <a href="/ja/index.html">home</a>
+  {% else %}
+    <span class="current">home</span>
   {% endif %}
   {% if page.title != "about" %}
     <a href="/ja/about.html">about</a>
+  {% else %}
+    <span class="current">about</span>
   {% endif %}
   {% if page.title != "wedding" %}
     <a href="/ja/wedding.html">wedding</a>
+  {% else %}
+    <span class="current">wedding</span>
   {% endif %}
   {% if page.title != "maternity" %}
     <a href="/ja/maternity.html">maternity</a>
+  {% else %}
+    <span class="current">maternity</span>
   {% endif %}
   {% if page.title != "street" %}
     <a href="/ja/street.html">street</a>
+  {% else %}
+    <span class="current">street</span>
   {% endif %}
   {% if page.title != "expos" %}
     <a href="/ja/expos.html">expos</a>
+  {% else %}
+    <span class="current">expos</span>
   {% endif %}
   {% if page.title != "blog" %}
     <a href="/ja/blog.html">blog</a>
+  {% else %}
+    <span class="current">blog</span>
   {% endif %}
 </div>
 
