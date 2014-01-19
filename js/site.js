@@ -23,6 +23,7 @@ var Tg = (function() {
     });
     $('.controls > .fa-step-backward').on('click', function(ev) {
       var $show = $(ev.target).closest('.slideshow');
+      if ($show.hasClass('sliding')) return;
       var $img = $show.find('img:visible');
       var $prev = $img.prev('img');
       if ( ! $prev[0]) return;
@@ -31,6 +32,7 @@ var Tg = (function() {
     });
     $('.controls > .fa-step-forward').on('click', function(ev) {
       var $show = $(ev.target).closest('.slideshow');
+      if ($show.hasClass('sliding')) return;
       var $img = $show.find('img:visible');
       var $next = $img.next('img');
       if ( ! $next[0]) return;
@@ -43,13 +45,18 @@ var Tg = (function() {
 
   this.nextSlide = function() {
 
+    $('div.slideshow').addClass('sliding');
+
     $('div.slideshow').find('img:visible').each(function(i, img) {
       var $img = $(img);
-      if ($img.closest('.slideshow').find('.fa-play').is(':visible')) return;
+      var $show = $img.closest('.slideshow');
+      if ($show.find('.fa-play').is(':visible')) {
+         $show.removeClass('sliding'); return;
+      }
       $img.fadeOut(1100, function() {
         var $next = $img.next('img');
         if ( ! $next[0]) $next = $img.parent().find('img:first');
-        $next.fadeIn(700);
+        $next.fadeIn(700, function() { $show.removeClass('sliding'); });
       });
     });
 
