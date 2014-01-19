@@ -2353,30 +2353,35 @@ div.footer a {
 }
 
 /* line 128, ../_scss/site.scss */
+.nihongo {
+  font-size: 87%;
+}
+
+/* line 132, ../_scss/site.scss */
 .entries {
   display: table;
 }
 
-/* line 131, ../_scss/site.scss */
+/* line 135, ../_scss/site.scss */
 .entry {
   display: table-row;
 }
-/* line 133, ../_scss/site.scss */
+/* line 137, ../_scss/site.scss */
 .entry .photo {
   display: table-cell;
 }
-/* line 135, ../_scss/site.scss */
+/* line 139, ../_scss/site.scss */
 .entry .photo img {
   width: 100px;
   vertical-align: text-top;
 }
-/* line 140, ../_scss/site.scss */
+/* line 144, ../_scss/site.scss */
 .entry .text {
   display: table-cell;
   padding-left: 1em;
   text-align: left;
 }
-/* line 144, ../_scss/site.scss */
+/* line 148, ../_scss/site.scss */
 .entry .text h1 {
   font-size: 120%;
 }
