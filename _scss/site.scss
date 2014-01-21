@@ -70,7 +70,12 @@ $slideshow_height: 500px;
   }
 }
 div.controls {
-  width: 9em;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 200px;
+  height: 50px;
+  margin-left: -100px;
   padding: 0.5em 0.5em;
   @include border-radius(5px, 5px);
   z-index: 777;
@@ -78,9 +83,6 @@ div.controls {
   color: black;
   font-size: 280%;
   font-weight: bold;
-  position: absolute;
-  top: 0.2em;
-  right: 0.2em;
   opacity: 0.0;
   &:hover {
     opacity: 0.7;

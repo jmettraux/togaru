@@ -2285,7 +2285,12 @@ p {
 
 /* line 72, ../_scss/site.scss */
 div.controls {
-  width: 9em;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 200px;
+  height: 50px;
+  margin-left: -100px;
   padding: 0.5em 0.5em;
   -webkit-border-radius: 5px 5px;
   -moz-border-radius: 5px / 5px;
@@ -2295,54 +2300,51 @@ div.controls {
   color: black;
   font-size: 280%;
   font-weight: bold;
-  position: absolute;
-  top: 0.2em;
-  right: 0.2em;
   opacity: 0.0;
 }
-/* line 85, ../_scss/site.scss */
+/* line 87, ../_scss/site.scss */
 div.controls:hover {
   opacity: 0.7;
 }
-/* line 88, ../_scss/site.scss */
+/* line 90, ../_scss/site.scss */
 div.controls i {
   padding: 0 0.2em;
   cursor: pointer;
 }
 
-/* line 94, ../_scss/site.scss */
+/* line 96, ../_scss/site.scss */
 div.menu {
   margin-top: 1em;
   margin-bottom: 2.5em;
 }
-/* line 97, ../_scss/site.scss */
+/* line 99, ../_scss/site.scss */
 div.menu a {
   margin: 0 0.2em;
 }
-/* line 99, ../_scss/site.scss */
+/* line 101, ../_scss/site.scss */
 div.menu a:hover {
   opacity: 0.5;
 }
-/* line 101, ../_scss/site.scss */
+/* line 103, ../_scss/site.scss */
 div.menu .current {
   opacity: 0.5;
 }
 
-/* line 106, ../_scss/site.scss */
+/* line 108, ../_scss/site.scss */
 div.page {
   height: 100%;
   min-height: 100%;
   position: relative;
 }
 
-/* line 112, ../_scss/site.scss */
+/* line 114, ../_scss/site.scss */
 div.main {
   width: 850px;
   margin: 0 auto;
   padding-bottom: 80px;
 }
 
-/* line 118, ../_scss/site.scss */
+/* line 120, ../_scss/site.scss */
 div.footer {
   position: absolute;
   background-color: grey;
@@ -2351,41 +2353,41 @@ div.footer {
   width: 100%;
   padding-top: 2em;
 }
-/* line 126, ../_scss/site.scss */
+/* line 128, ../_scss/site.scss */
 div.footer a {
   color: black;
 }
 
-/* line 131, ../_scss/site.scss */
+/* line 133, ../_scss/site.scss */
 .nihongo {
   font-size: 87%;
 }
 
-/* line 135, ../_scss/site.scss */
+/* line 137, ../_scss/site.scss */
 .entries {
   display: table;
 }
 
-/* line 138, ../_scss/site.scss */
+/* line 140, ../_scss/site.scss */
 .entry {
   display: table-row;
 }
-/* line 140, ../_scss/site.scss */
+/* line 142, ../_scss/site.scss */
 .entry .photo {
   display: table-cell;
 }
-/* line 142, ../_scss/site.scss */
+/* line 144, ../_scss/site.scss */
 .entry .photo img {
   width: 100px;
   vertical-align: text-top;
 }
-/* line 147, ../_scss/site.scss */
+/* line 149, ../_scss/site.scss */
 .entry .text {
   display: table-cell;
   padding-left: 1em;
   text-align: left;
 }
-/* line 151, ../_scss/site.scss */
+/* line 153, ../_scss/site.scss */
 .entry .text h1 {
   font-size: 120%;
 }
