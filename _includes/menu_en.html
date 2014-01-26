@@ -25,6 +25,11 @@
   {% else %}
     <span class="current">street</span>
   {% endif %}
+  {% if page.title != "hotel" %}
+    <a href="/en/hotel.html">hotel</a>
+  {% else %}
+    <span class="current">hotel</span>
+  {% endif %}
   {% if page.title != "expos" %}
     <a href="/en/expos.html">expos</a>
   {% else %}

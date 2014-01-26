@@ -2391,3 +2391,12 @@ div.footer a {
 .entry .text h1 {
   font-size: 120%;
 }
+
+/* line 161, ../_scss/site.scss */
+.hotel-entry {
+  margin-bottom: 3.5em;
+}
+/* line 163, ../_scss/site.scss */
+.hotel-entry img {
+  margin-bottom: 0.5em;
+}
