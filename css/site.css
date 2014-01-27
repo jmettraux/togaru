@@ -2342,9 +2342,10 @@ div.main {
   width: 850px;
   margin: 0 auto;
   padding-bottom: 80px;
+  min-height: 490px;
 }
 
-/* line 120, ../_scss/site.scss */
+/* line 121, ../_scss/site.scss */
 div.footer {
   position: absolute;
   background-color: grey;
@@ -2353,50 +2354,50 @@ div.footer {
   width: 100%;
   padding-top: 2em;
 }
-/* line 128, ../_scss/site.scss */
+/* line 129, ../_scss/site.scss */
 div.footer a {
   color: black;
 }
 
-/* line 133, ../_scss/site.scss */
+/* line 134, ../_scss/site.scss */
 .nihongo {
   font-size: 87%;
 }
 
-/* line 137, ../_scss/site.scss */
+/* line 138, ../_scss/site.scss */
 .entries {
   display: table;
 }
 
-/* line 140, ../_scss/site.scss */
+/* line 141, ../_scss/site.scss */
 .entry {
   display: table-row;
 }
-/* line 142, ../_scss/site.scss */
+/* line 143, ../_scss/site.scss */
 .entry .photo {
   display: table-cell;
 }
-/* line 144, ../_scss/site.scss */
+/* line 145, ../_scss/site.scss */
 .entry .photo img {
   width: 100px;
   vertical-align: text-top;
 }
-/* line 149, ../_scss/site.scss */
+/* line 150, ../_scss/site.scss */
 .entry .text {
   display: table-cell;
   padding-left: 1em;
   text-align: left;
 }
-/* line 153, ../_scss/site.scss */
+/* line 154, ../_scss/site.scss */
 .entry .text h1 {
   font-size: 120%;
 }
 
-/* line 161, ../_scss/site.scss */
+/* line 162, ../_scss/site.scss */
 .hotel-entry {
   margin-bottom: 3.5em;
 }
-/* line 163, ../_scss/site.scss */
+/* line 164, ../_scss/site.scss */
 .hotel-entry img {
   margin-bottom: 0.5em;
 }
