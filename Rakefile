@@ -56,3 +56,37 @@ task :u => :build do
   sh('rsync -azve ssh _site/* lin:www/tg/')
 end
 
+#
+# images
+
+desc "shrink images in current dir and place shrinked in target path"
+task :shrink, :path do |t, args|
+
+  target = args[:path] || "(no_path)"
+  target = File.absolute_path("#{Rake.original_dir}/#{args[:path]}")
+
+  Dir["#{Rake.original_dir}/*"].each do |path|
+
+    next unless path.downcase.match(/\.jpg$/)
+
+    ext = File.extname(path)
+    bas = File.basename(path, ext)
+    ext = ext.downcase
+
+    info = `identify #{path}`
+    ii = info.split(' ', 2)
+    puts
+    puts '.'
+    puts '  ' + ii[0]
+    puts '    ' + ii[1]
+
+    #x, y = info.split[2].split('x').collect(&:to_i)
+    #rs = x > y ? '500' : 'x500'
+    rs = 'x500'
+
+    s = "convert \\\n  #{path} \\\n  -resize #{rs} \\\n  #{target}/#{bas}#{ext}"
+    puts(s)
+    system(s) if args[:path] # else it's a dry run
+  end
+end
+
