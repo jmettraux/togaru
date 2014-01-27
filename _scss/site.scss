@@ -117,6 +117,11 @@ div.main {
   padding-bottom: 80px;
   min-height: 490px;
 }
+div.main.street {
+  .slideshow {
+    margin-bottom: 2em;
+  }
+}
 
 div.footer {
   position: absolute;
@@ -164,5 +169,9 @@ div.footer {
   img {
     margin-bottom: 0.5em;
   }
+}
+
+.photo-entry {
+  margin-bottom: 2.1em;
 }
 
