@@ -73,20 +73,28 @@ task :shrink, :path do |t, args|
     bas = File.basename(path, ext)
     ext = ext.downcase
 
-    info = `identify #{path}`
-    ii = info.split(' ', 2)
+    info = `identify "#{path}"`
+    info = info[info.index('JPEG')..-1]
     puts
     puts '.'
-    puts '  ' + ii[0]
-    puts '    ' + ii[1]
+    puts '  ' + path
+    puts '    ' + info
 
     #x, y = info.split[2].split('x').collect(&:to_i)
     #rs = x > y ? '500' : 'x500'
-    rs = 'x500'
+    rs = '830x500'
 
-    s = "convert \\\n  #{path} \\\n  -resize #{rs} \\\n  #{target}/#{bas}#{ext}"
+    tpath = "\"#{target}/#{bas}#{ext}\""
+    s = "convert \\\n  \"#{path}\" \\\n  -resize #{rs} \\\n  #{tpath}"
+
     puts(s)
-    system(s) if args[:path] # else it's a dry run
+
+    if args[:path] # else it's a dry run
+      system(s)
+      info = `identify "#{tpath}"`
+      info = info[info.index('JPEG')..-1]
+      puts '    ' + info
+    end
   end
 end
 
