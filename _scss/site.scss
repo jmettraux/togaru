@@ -103,6 +103,13 @@ div.menu {
   .current {
     opacity: 0.5;
   }
+  .cart {
+    font-size: 75%;
+    opacity: 0.5;
+    .fa-shopping-cart {
+      @include transform(scale(-1, 1)); // horizontal flip
+    }
+  }
 }
 
 div.page {

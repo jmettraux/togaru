@@ -2329,15 +2329,28 @@ div.menu a:hover {
 div.menu .current {
   opacity: 0.5;
 }
+/* line 106, ../_scss/site.scss */
+div.menu .cart {
+  font-size: 75%;
+  opacity: 0.5;
+}
+/* line 109, ../_scss/site.scss */
+div.menu .cart .fa-shopping-cart {
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
 
-/* line 108, ../_scss/site.scss */
+/* line 115, ../_scss/site.scss */
 div.page {
   height: 100%;
   min-height: 100%;
   position: relative;
 }
 
-/* line 114, ../_scss/site.scss */
+/* line 121, ../_scss/site.scss */
 div.main {
   width: 850px;
   margin: 0 auto;
@@ -2345,12 +2358,12 @@ div.main {
   min-height: 490px;
 }
 
-/* line 121, ../_scss/site.scss */
+/* line 128, ../_scss/site.scss */
 div.main.street .slideshow {
   margin-bottom: 2em;
 }
 
-/* line 126, ../_scss/site.scss */
+/* line 133, ../_scss/site.scss */
 div.footer {
   position: absolute;
   background-color: grey;
@@ -2359,55 +2372,55 @@ div.footer {
   width: 100%;
   padding-top: 2em;
 }
-/* line 134, ../_scss/site.scss */
+/* line 141, ../_scss/site.scss */
 div.footer a {
   color: black;
 }
 
-/* line 139, ../_scss/site.scss */
+/* line 146, ../_scss/site.scss */
 .nihongo {
   font-size: 87%;
 }
 
-/* line 143, ../_scss/site.scss */
+/* line 150, ../_scss/site.scss */
 .entries {
   display: table;
 }
 
-/* line 146, ../_scss/site.scss */
+/* line 153, ../_scss/site.scss */
 .entry {
   display: table-row;
 }
-/* line 148, ../_scss/site.scss */
+/* line 155, ../_scss/site.scss */
 .entry .photo {
   display: table-cell;
 }
-/* line 150, ../_scss/site.scss */
+/* line 157, ../_scss/site.scss */
 .entry .photo img {
   width: 100px;
   vertical-align: text-top;
 }
-/* line 155, ../_scss/site.scss */
+/* line 162, ../_scss/site.scss */
 .entry .text {
   display: table-cell;
   padding-left: 1em;
   text-align: left;
 }
-/* line 159, ../_scss/site.scss */
+/* line 166, ../_scss/site.scss */
 .entry .text h1 {
   font-size: 120%;
 }
 
-/* line 167, ../_scss/site.scss */
+/* line 174, ../_scss/site.scss */
 .hotel-entry {
   margin-bottom: 3.5em;
 }
-/* line 169, ../_scss/site.scss */
+/* line 176, ../_scss/site.scss */
 .hotel-entry img {
   margin-bottom: 0.5em;
 }
 
-/* line 174, ../_scss/site.scss */
+/* line 181, ../_scss/site.scss */
 .photo-entry {
   margin-bottom: 2.1em;
 }
