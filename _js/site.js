@@ -7,7 +7,13 @@ var Tg = (function() {
 
     var $ss = $('div.slideshow');
     $ss.find('img:first').show();
-    var x = $ss.append('<div class="controls"><i class="fa fa-step-backward" /><i class="fa fa-pause" /><i class="fa fa-play" /><i class="fa fa-step-forward" /></div>');
+    $ss.append('<div class="control-sheet"></div>');
+    $ss.find('.control-sheet').append('<div class="controls"></div>');
+    var $cs = $ss.find('.controls');
+    $cs.append('<i class="fa fa-step-backward" />');
+    $cs.append('<i class="fa fa-pause" />');
+    $cs.append('<i class="fa fa-play" />');
+    $cs.append('<i class="fa fa-step-forward" />');
 
     $('.controls > .fa-play').hide();
 

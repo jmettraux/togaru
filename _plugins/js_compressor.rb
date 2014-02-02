@@ -20,7 +20,7 @@ module Jekyll
         "java -jar _tools/google-closure-compiler.jar --js #{libs.join(' ')}" +
         " > js/site.js"
       )
-      puts 'wrote js/site.js.'
+      puts "\nwrote js/site.js."
     end
   end
 end
