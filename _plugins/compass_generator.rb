@@ -11,7 +11,7 @@ module Jekyll
 
     def generate(site)
 
-      puts; system "bundle exec compass compile _compass/"
+      puts; system 'bundle exec compass compile _compass/'
     end
   end
 end
