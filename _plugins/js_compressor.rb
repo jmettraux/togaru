@@ -13,10 +13,7 @@ module Jekyll
 
     def generate(site)
 
-      libs = %w[
-        site.js cart.js
-      ].collect { |e| "_js/#{e}" }
-
+      libs = Dir['_js/*.js']
       mtime = libs.collect { |e| File.new(e).mtime }.max
 
       return if $JS_MTIME >= mtime
