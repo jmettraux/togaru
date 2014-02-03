@@ -53,7 +53,7 @@ end
 desc "uploads the website"
 task :u => :build do
 
-  sh('rsync -azve ssh _site/* lin:www/tg/')
+  sh('time rsync -azvhe ssh _site/* lin:www/tg/')
 end
 
 #
