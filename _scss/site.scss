@@ -110,12 +110,23 @@ div.menu {
     opacity: 0.5;
   }
   .cart {
-    font-size: 75%;
-    opacity: 0.5;
+    font-size: 77%;
+    .fa-shopping-cart {
+      opacity: 0.5;
+    }
+  }
+  .cart.empty {
     .fa-shopping-cart {
       @include transform(scale(-1, 1)); // horizontal flip
     }
   }
+}
+.cart .count {
+  position: relative;
+  //top: -0.0em;
+  //left: -0.0em;
+  //text-shadow: 5px 5px 5px white;
+  color: white;
 }
 
 div.page {
