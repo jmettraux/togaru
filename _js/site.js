@@ -3,7 +3,10 @@ var Tg = (function() {
 
   var self = this;
 
-  this.initSlideshows = function() {
+  //
+  // protected
+
+  var initSlideshows = function() {
 
     var $ss = $('div.slideshow');
     $ss.find('img:first').show();
@@ -71,9 +74,12 @@ var Tg = (function() {
     window.setTimeout(self.nextSlide, 5 * 1000);
   };
 
+  //
+  // public
+
   this.init = function() {
 
-    self.initSlideshows();
+    initSlideshows();
   };
 
   //
