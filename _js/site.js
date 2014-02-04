@@ -10,8 +10,8 @@ var Tg = (function() {
 
     var $ss = $('div.slideshow');
     $ss.find('img:first').show();
-    $ss.append('<div class="control-sheet"></div>');
-    $ss.find('.control-sheet').append('<div class="controls"></div>');
+    $ss.append('<div class="sheet"></div>');
+    $ss.find('.sheet').append('<div class="controls"></div>');
     var $cs = $ss.find('.controls');
     $cs.append('<i class="fa fa-step-backward" />');
     $cs.append('<i class="fa fa-pause" />');

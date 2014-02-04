@@ -69,12 +69,13 @@ $slideshow_height: 500px;
     height: $slideshow_height;
   }
 }
-div.control-sheet {
+div.sheet {
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
-  left: 0;
+  //left: 0;
+  margin: 0 auto;
   opacity: 0.0;
   &:hover { opacity: 1.0; }
 }
@@ -197,5 +198,9 @@ div.footer {
 
 .photo-entry {
   margin-bottom: 2.1em;
+}
+
+.sale {
+  position: relative;
 }
 
