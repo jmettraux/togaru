@@ -25,8 +25,8 @@ var Cart = (function() {
       $sale.append('<div class="sheet"></div>');
       $sale.append($img);
       var $sheet = $sale.find('.sheet');
-      $sheet.css('left', '' + ($sheet.width() - $img.width()) / 2 + 'px');
       $sheet.css('width', '' + $img.width() + 'px');
+      $sheet.css('margin-left', '-' + ($img.width() / 2) + 'px');
       $sheet.append('<div class="controls"></div>');
       var $cs = $sheet.find('.controls');
       $cs.append('<i class="fa fa-shopping-cart" />');
