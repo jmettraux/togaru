@@ -17,6 +17,7 @@ var Tg = (function() {
     $cs.append('<i class="fa fa-pause" />');
     $cs.append('<i class="fa fa-play" />');
     $cs.append('<i class="fa fa-step-forward" />');
+    $cs.css('margin-left', '-' + ($cs.outerWidth() / 2) + 'px');
 
     $('.controls > .fa-play').hide();
 
