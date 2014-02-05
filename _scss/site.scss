@@ -99,6 +99,14 @@ div.controls {
     cursor: pointer;
   }
 }
+div.controls.wide {
+  width: 600px;
+  margin-left: -300px;
+}
+
+.horizontally-flipped {
+  @include transform(scale(-1, 1)); // horizontal flip
+}
 
 div.menu {
   margin-top: 1em;
@@ -118,7 +126,8 @@ div.menu {
   }
   .cart.empty {
     .fa-shopping-cart {
-      @include transform(scale(-1, 1)); // horizontal flip
+      //@include transform(scale(-1, 1)); // horizontal flip
+      @extend .horizontally-flipped;
     }
   }
 }
@@ -202,5 +211,10 @@ div.footer {
 
 .sale {
   position: relative;
+}
+
+.purchase-format {
+  font-size: 50%;
+  margin-right: 1em;
 }
 
