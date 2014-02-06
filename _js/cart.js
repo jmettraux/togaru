@@ -25,7 +25,9 @@ var Cart = (function() {
     if ($target.hasClass('horizontally-flipped')) return;
     $target.addClass('horizontally-flipped');
     $target.removeAttr('title');
-    $target.parent().addClass('wide');
+    var $parent = $target.parent();
+    $parent.addClass('wide');
+    $parent.css('margin-left', '-' + ($parent.outerWidth() / 2) + 'px');
 
     var data = $target.attr('data-tg-data');
     for (var i = 0, l = data.length; i < l; i++) {
