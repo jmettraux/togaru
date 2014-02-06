@@ -30,7 +30,7 @@ var Cart = (function() {
     $parent.css('margin-left', '-' + ($parent.outerWidth() / 2) + 'px');
 
     var data = $target.attr('data-tg-data');
-    for (var i = 0, l = data.length; i < l; i++) {
+    for (var i = data.length - 1; i >= 0; i--) {
       var c = choices[data[i]];
       if ( ! c) continue;
       var $format = $('<span class="purchase-format"></span>');
