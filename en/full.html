@@ -18,14 +18,14 @@ title: null
       Tony Garcia Photography
     </div>
     <div class="menu">
-      <a data-cat="street" href="#">street</a>
+      <a data-cat="street" class="selected" href="#">street</a>
       <a data-cat="landscape" href="#">landscape</a>
     </div>
   </div>
 
   <div class="content">
     <img data-cat="street" src="/images/photos/s0001_digital.jpg" />
-    <img data-cat="landscape" src="/images/photos/eyes.jpg" style="display: none" />
+    <img data-cat="landscape" src="/images/photos/eyes.jpg" style="display: none;" />
   </div>
 
   <!--
@@ -40,8 +40,12 @@ title: null
     //$(document).ready(Cart.init);
     $(document).ready(function() {
       $('a[data-cat]').on('mouseover', function(ev) {
+        var $a = $(ev.target);
+        if ($a.hasClass('selected')) return;
+        var cat = $a.attr('data-cat');
+        $('a[data-cat]').removeClass('selected');
         $('img[data-cat]').hide();
-        var cat = $(ev.target).attr('data-cat');
+        $a.addClass('selected');
         $('img[data-cat=' + cat + ']').show();
       });
     });
