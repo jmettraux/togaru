@@ -48,9 +48,10 @@ title: null
         if ($span.hasClass('selected')) return;
         var cat = $span.attr('data-cat');
         $('span[data-cat]').removeClass('selected');
-        $('img[data-cat]').hide();
         $span.addClass('selected');
-        $('img[data-cat=' + cat + ']').show();
+        $('img[data-cat]:visible').fadeOut(200, function() {
+          $('img[data-cat=' + cat + ']').fadeIn(200);
+        });
       });
     });
   </script>
