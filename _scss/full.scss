@@ -64,18 +64,20 @@ body.full {
       display: inline-block;
       background-color: rgba(255, 255, 255, 1.0);
       padding: 3px;
-      padding-right: 4em;
+      //padding-right: 4em;
     }
     .menu {
       display: inline-block;
       color: light-grey;
-      a {
+      span {
         padding: 3px;
         background-color: rgba(255, 255, 255, 1.0);
       }
-      a.selected {
-        color: black;
-        background-color: rgba(255, 255, 255, 0.2);
+      span.selected {
+        a {
+          color: white;
+        }
+        background-color: rgba(255, 255, 255, 0.0);
       }
     }
   }
