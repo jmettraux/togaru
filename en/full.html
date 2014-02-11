@@ -18,8 +18,12 @@ title: null
       Tony Garcia Photography
     </div>
     <div class="center">
+      <a href="#" class="item" data-cat="about">about</a>
+      <a href="#" class="item" data-cat="wedding">wedding</a>
+      <a href="#" class="item" data-cat="maternity">maternity</a>
       <a href="#" class="item selected" data-cat="street">street</a>
       <a href="#" class="item" data-cat="scenery">scenery</a>
+      <a href="#" class="item" data-cat="more">more</a>
     </div>
     <div class="right">
       &nbsp;
@@ -27,8 +31,12 @@ title: null
   </div>
 
   <div class="content">
+    <img data-cat="about" src="/images/photos/skate.jpg" />
+    <img data-cat="wedding" src="/images/photos/weddings/L1114609.jpg" />
+    <img data-cat="maternity" src="/images/photos/weddings/L1114609.jpg" />
     <img data-cat="street" src="/images/photos/s0001_digital.jpg" />
-    <img data-cat="scenery" src="/images/photos/eyes.jpg" style="display: none;" />
+    <img data-cat="scenery" src="/images/photos/p0002_digital.jpg" style="height: 100%" />
+    <img data-cat="more" src="/images/photos/L1111153.jpg" />
   </div>
 
   <!--
@@ -43,14 +51,18 @@ title: null
     //$(document).ready(Tg.init);
     //$(document).ready(Cart.init);
     $(document).ready(function() {
+
+      $('img[data-cat]').css('display', 'none');
+      $('img[data-cat]:first').show();
+
       $('a[data-cat]').on('mouseover', function(ev) {
         var $a = $(ev.target);
         if ($a.hasClass('selected')) return;
         var cat = $a.attr('data-cat');
         $('a[data-cat]').removeClass('selected');
         $a.addClass('selected');
-        $('img[data-cat]:visible').hide();
-        $('img[data-cat=' + cat + ']').fadeIn(200);
+        $('img[data-cat]:visible').fadeOut(200);
+        $('img[data-cat=' + cat + ']').show();
       });
     });
   </script>
