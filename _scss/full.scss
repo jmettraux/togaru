@@ -55,30 +55,36 @@ body.full {
   position: relative;
   overflow-y: hidden;
   .header {
+    overflow-x: hidden;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.0);
     font-size: 140%;
     color: black;
-    width: 100%;
-    .logo {
-      display: inline-block;
+    width: 7000px;
+    word-spacing: 0;
+    * {
+      float: left;
+    }
+    .left {
       background-color: rgba(255, 255, 255, 1.0);
       padding: 3px;
       //padding-right: 4em;
     }
-    .menu {
-      display: inline-block;
+    .center {
       color: light-grey;
-      span {
+      a {
         padding: 3px;
         background-color: rgba(255, 255, 255, 1.0);
       }
-      span.selected {
-        a {
-          color: white;
-        }
+      a.selected {
+        color: white;
         background-color: rgba(255, 255, 255, 0.0);
       }
+    }
+    .right {
+      width: 1600px;
+      padding: 3px;
+      background-color: rgba(255, 255, 255, 1.0);
     }
   }
   .content {
