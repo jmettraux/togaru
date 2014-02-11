@@ -53,10 +53,11 @@ a {
 
 body.full {
   position: relative;
-  overflow-y: hidden;
   overflow-x: hidden;
+  overflow-y: hidden;
   .header {
     overflow-x: hidden;
+    overflow-y: hidden;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.0);
     font-size: 140%;
@@ -88,7 +89,7 @@ body.full {
       }
     }
     .right {
-      width: 1400px;
+      width: 900px;
       padding: 3px;
       background-color: rgba(255, 255, 255, 1.0);
     }
