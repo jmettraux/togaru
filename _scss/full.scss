@@ -54,6 +54,7 @@ a {
 body.full {
   position: relative;
   overflow-y: hidden;
+  overflow-x: hidden;
   .header {
     overflow-x: hidden;
     position: absolute;
@@ -62,18 +63,23 @@ body.full {
     color: black;
     width: 7000px;
     word-spacing: 0;
+    height: 63px;
     * {
+      height: 100%;
       float: left;
     }
     .left {
       background-color: rgba(255, 255, 255, 1.0);
-      padding: 3px;
-      //padding-right: 4em;
+      padding-top: 14px;
+      padding-left: 12px;
+      padding-right: 63px;
+      font-size: 130%;
     }
     .center {
       color: light-grey;
       a {
-        padding: 3px;
+        padding: 3px 7px;
+        padding-top: 21px;
         background-color: rgba(255, 255, 255, 1.0);
       }
       a.selected {
@@ -82,7 +88,7 @@ body.full {
       }
     }
     .right {
-      width: 1600px;
+      width: 1400px;
       padding: 3px;
       background-color: rgba(255, 255, 255, 1.0);
     }
