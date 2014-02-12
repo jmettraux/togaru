@@ -51,6 +51,9 @@ title: null
     //$(document).ready(Cart.init);
     $(document).ready(function() {
 
+      var cat = window.location.href.match(/\/en\/([^\.\/]+)/)[1];
+      $('a.item[data-cat="' + cat + '"]').addClass('selected');
+
       $('.header > .left').on('click', function(ev) {
         window.location.href = '/en/index.html';
       });
