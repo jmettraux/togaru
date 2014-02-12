@@ -55,9 +55,6 @@ title: null
     //$(document).ready(Cart.init);
     $(document).ready(function() {
 
-      $('img[data-cat]').css('display', 'none');
-      $('img[data-cat]:first').show();
-
       $('div.left, a[data-cat]').on('mouseover', function(ev) {
         var $t = $(ev.target);
         if ($t.hasClass('selected')) return;
