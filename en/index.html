@@ -18,12 +18,12 @@ title: null
       Tony Garcia Photography
     </div>
     <div class="center">
-      <a href="#" class="item" data-cat="about">about</a>
-      <a href="#" class="item" data-cat="wedding">wedding</a>
-      <a href="#" class="item" data-cat="maternity">maternity</a>
-      <a href="#" class="item" data-cat="street">street</a>
-      <a href="#" class="item" data-cat="scenery">scenery</a>
-      <a href="#" class="item" data-cat="more">more</a>
+      <a class="item" data-cat="about">about</a>
+      <a class="item" data-cat="wedding">wedding</a>
+      <a class="item" data-cat="maternity">maternity</a>
+      <a class="item" data-cat="street">street</a>
+      <a class="item" data-cat="scenery">scenery</a>
+      <a class="item" data-cat="more">more</a>
     </div>
     <div class="right">
       &nbsp;
@@ -63,6 +63,12 @@ title: null
         $t.addClass('selected');
         $('img[data-cat]:visible').fadeOut(200);
         $('img[data-cat=' + cat + ']').show();
+      });
+
+      $('a[data-cat]').on('click', function(ev) {
+        var $a = $(ev.target);
+        var cat = $a.attr('data-cat');
+        window.location.href = cat + '.html';
       });
     });
   </script>
