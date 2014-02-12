@@ -51,7 +51,7 @@ body {
 a {
   color: grey;
   text-decoration: none;
-  &:hover { color: black; }
+  &:hover { color: white; }
 }
 
 $header_height: 63px;
@@ -84,6 +84,7 @@ $header_height: 63px;
       padding-top: 21px;
       background-color: rgba(255, 255, 255, 1.0);
       cursor: pointer;
+      &:hover { color: black; }
     }
     a.selected {
       color: white;
@@ -111,6 +112,15 @@ $header_height: 63px;
     width: 600px;
     p {
       padding-top: 1em;
+    }
+    p.social {
+      a {
+        display: block;
+      }
+      i {
+        text-align: left;
+        width: 1.5em;
+      }
     }
   }
 }
