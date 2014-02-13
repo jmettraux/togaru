@@ -105,7 +105,9 @@ $header_height: 63px;
 .about {
   img {
     display: inline-block;
-    width: 441px;
+    width: 450px;
+    padding: 14px;
+    padding-bottom: 0;
   }
   .text {
     display: inline-block;
