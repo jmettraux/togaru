@@ -30,65 +30,54 @@ title: null
     </div>
   </div>
 
-  <div class="content landscape">
+  <div class="content">
+    &nbsp;
+  </div>
+  <div class="images landscape">
     <img
       data-cat="first"
-      src="/images/photos/scenery/de_schelde/L1116211.jpg"
-      style="width: 150%; top: -100px; left: -50%;" />
+      src="/images/photos/scenery/de_schelde/L1116211.jpg" />
     <img
       data-cat="about"
-      src="/images/photos/skate.jpg"
-      style="width: 120%; top: -150px; left: -20%;" />
+      src="/images/photos/skate.jpg" />
     <img
       data-cat="wedding"
-      src="/images/photos/weddings/L1114609.jpg"
-      style="width: 130%; top: -45%; left: -21%;" />
+      src="/images/photos/weddings/L1114609.jpg" />
     <img
       data-cat="maternity"
-      src="/images/photos/paternity.jpg"
-      style="width: 160%; top: -40%; left: -30%;" />
+      src="/images/photos/paternity.jpg" />
     <img
       data-cat="street"
-      src="/images/photos/s0001_digital.jpg"
-      style="top: -0px;" />
+      src="/images/photos/s0001_digital.jpg" />
     <img
       data-cat="scenery"
-      src="/images/photos/scenery.jpg"
-      style="top: -0px;" />
+      src="/images/photos/scenery.jpg" />
     <img
       data-cat="more"
-      src="/images/photos/L1111153.jpg"
-      style="top: -130px;" />
+      src="/images/photos/L1111153.jpg" />
   </div>
-
-  <div class="content portrait">
+  <div class="images portrait">
     <img
       data-cat="first"
-      src="/images/photos/L9993505.jpg"
-      style="top: -0px;" />
+      src="/images/photos/L9993505.jpg" />
     <img
       data-cat="about"
-      src="/images/photos/L1115635.jpg"
-      style="top: -0px;" />
+      src="/images/photos/L1115635.jpg" />
     <img
       data-cat="wedding"
-      src="/images/photos/L1114618.jpg"
-      style="top: -0px;" />
+      src="/images/photos/L1114618.jpg" />
     <img
       data-cat="maternity"
-      src="/images/photos/paternity.jpg"
-      style="width: 200%; top: -120px; left: -80%;" />
+      src="/images/photos/paternity.jpg" />
     <img
       data-cat="street"
       src="/images/photos/street/tokyo/L9053387.jpg" />
     <img
       data-cat="scenery"
-      src="/images/photos/scenery.jpg"
-      style="width: 200%; top: -0px;" />
+      src="/images/photos/scenery.jpg" />
     <img
       data-cat="more"
-      src="/images/photos/L1111180.jpg"
-      style="top: -140px;" />
+      src="/images/photos/L1111180.jpg" />
   </div>
 
   <!--
@@ -112,9 +101,15 @@ title: null
         var cat = $t.attr('data-cat');
         $('div[data-cat], a[data-cat]').removeClass('selected');
         $t.addClass('selected');
-        $('img[data-cat]:visible').fadeOut(200);
-        $('img[data-cat=' + cat + ']').show();
+        //$('img[data-cat]:visible').fadeOut(200);
+        //$('img[data-cat=' + cat + ']').show();
+        var or = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+        var src = $('.' + or + ' > img[data-cat=' + cat + ']').prop('src');
+        var $t = $('body');
+        $t.css('background', 'url(' + src + ') no-repeat center center fixed');
+        $t.css('background-size', 'cover');
       });
+      $('div.left').trigger('mouseover');
 
       $('a[data-cat]').on('click', function(ev) {
         var $a = $(ev.target);
