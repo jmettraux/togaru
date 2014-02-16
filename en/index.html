@@ -30,8 +30,7 @@ title: null
     </div>
   </div>
 
-  <div class="content">
-    &nbsp;
+  <div class="curtain">
   </div>
   <div class="images landscape">
     <img
@@ -101,13 +100,16 @@ title: null
         var cat = $t.attr('data-cat');
         $('div[data-cat], a[data-cat]').removeClass('selected');
         $t.addClass('selected');
-        //$('img[data-cat]:visible').fadeOut(200);
-        //$('img[data-cat=' + cat + ']').show();
         var or = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
         var src = $('.' + or + ' > img[data-cat=' + cat + ']').prop('src');
         var $t = $('body');
+        var $c = $('.curtain');
+        $c.css('opacity', '1.0');
+        $c.css('width', '' + window.innerWidth + 'px');
+        $c.css('height', '' + window.innerHeight + 'px');
         $t.css('background', 'url(' + src + ') no-repeat center center fixed');
         $t.css('background-size', 'cover');
+        $c.fadeTo(350, 0.0);
       });
       $('div.left').trigger('mouseover');
 
