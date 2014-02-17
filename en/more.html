@@ -19,15 +19,44 @@ title: more
 <script>
   $(document).ready(function() {
 
-    var show = function(img) {
-      var $t = $('.show');
-      var src = $(img).prop('src');
-      $t.css('height', '700px');
-      $t.css('background', 'url(' + src + ') no-repeat center center fixed');
-      $t.css('background-position', '50% 70%');
-      $t.css('background-size', 'auto 80%');
+    // TODO: package that in a library
+
+    var $show = $('.show');
+
+    $show.append('<div class="thumbs"></div>');
+    $thumbs = $show.find('.thumbs');
+    $show.find('img').each(function(i, e) {
+      var src = $(e).prop('src');
+      $thumbs.append('<img src="' + src + '" />');
+    });
+
+    var show = function($img) {
+
+      if ($img.length < 1) return;
+
+      var src = $img.prop('src');
+      $show.css('height', '700px');
+      $show.css('background', 'url(' + src + ') no-repeat center center fixed');
+      $show.css('background-position', '50% 70%');
+      $show.css('background-size', 'auto 80%');
+
+      $thumbs.find('img').removeClass('selected');
+      $img.addClass('selected');
+      var $i = $img.prev();
+      if ($i.length < 1) $i = $img;
+      $thumbs.css('top', '-' + $i[0].offsetTop + 'px');
     };
-    show($('img:first'));
+    show($('.thumbs > img:first'));
+
+    $(window).on('keyup', function(ev) {
+      var kc = ev.keyCode;
+      var $sel = $('.thumbs > img.selected');
+      if (kc === 74 || kc === 40) show($sel.next());
+      else if (kc === 75 || kc === 38) show($sel.prev());
+    });
+    $thumbs.find('img').on('click', function(ev) {
+      show($(ev.target));
+    });
   });
 </script>
 

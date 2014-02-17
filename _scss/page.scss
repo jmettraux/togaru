@@ -132,8 +132,23 @@ $header_height: 63px;
   top: $header_height;
   width: 100%;
   height: 100%;
+  z-index: -1;
   img {
     display: none;
+  }
+  .thumbs {
+    position: absolute;
+    top: 0px;
+    img {
+      display: block;
+      width: 77px;
+      border-top: 3px solid black;
+      border-left: 2px solid black;
+    }
+    img.selected {
+      opacity: 0.55;
+      border-right: 2px solid grey;
+    }
   }
 }
 
