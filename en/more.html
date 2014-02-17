@@ -1,0 +1,30 @@
+---
+layout: page_en
+title: more
+---
+
+<div class="show">
+
+  <img src="/images/photos/street/bruxelles/L1115717.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115719.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115721-2.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115722.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115733.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115734.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115739.jpg" />
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+</script>
+<script>
+  $(document).ready(function() {
+
+    var $t = $('.show');
+    var src = $('img:first').prop('src');
+    $t.css('height', '700px');
+    $t.css('background', 'url(' + src + ') no-repeat center center fixed');
+    $t.css('background-size', 'cover');
+    console.log($t);
+  });
+</script>
+
