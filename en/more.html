@@ -12,6 +12,12 @@ title: more
   <img src="/images/photos/street/bruxelles/L1115733.jpg" />
   <img src="/images/photos/street/bruxelles/L1115734.jpg" />
   <img src="/images/photos/street/bruxelles/L1115739.jpg" />
+
+  <img src="/images/photos/street/tokyo/L9053380-2.jpg" />
+  <img src="/images/photos/street/tokyo/L9053387.jpg" />
+  <img src="/images/photos/street/tokyo/L9997656.jpg" />
+  <img src="/images/photos/street/tokyo/L9997667.jpg" />
+  <img src="/images/photos/street/tokyo/L9997799-2.jpg" />
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
@@ -35,7 +41,7 @@ title: more
       if ($img.length < 1) return;
 
       var src = $img.prop('src');
-      $show.css('height', '700px');
+      $show.css('height', '' + ($(window).height() - $('.header').height()) + 'px'); // TODO: nuke, that, set 100% height via css!
       $show.css('background', 'url(' + src + ') no-repeat center center fixed');
       $show.css('background-position', '50% 70%');
       $show.css('background-size', 'auto 80%');
@@ -53,6 +59,8 @@ title: more
       var $sel = $('.thumbs > img.selected');
       if (kc === 74 || kc === 40) show($sel.next());
       else if (kc === 75 || kc === 38) show($sel.prev());
+      else if (kc === 72) show($('.thumbs > img:first'));
+      else if (kc === 76) show($('.thumbs > img:last'));
     });
     $thumbs.find('img').on('click', function(ev) {
       show($(ev.target));
