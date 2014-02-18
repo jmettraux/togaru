@@ -28,6 +28,7 @@ title: more
     // TODO: package that in a library
 
     var $show = $('.show');
+    var $window = $(window);
 
     $show.append('<div class="thumbs"></div>');
     $thumbs = $show.find('.thumbs');
@@ -41,7 +42,7 @@ title: more
       if ($img.length < 1) return;
 
       var src = $img.prop('src');
-      $show.css('height', '' + ($(window).height() - $('.header').height()) + 'px'); // TODO: nuke, that, set 100% height via css!
+      $show.css('height', '' + ($window.height() - $('.header').height()) + 'px'); // TODO: nuke, that, set 100% height via css!
       $show.css('background', 'url(' + src + ') no-repeat center center fixed');
       $show.css('background-position', '50% 70%');
       $show.css('background-size', 'auto 80%');
@@ -51,6 +52,12 @@ title: more
       var $i = $img.prev();
       if ($i.length < 1) $i = $img;
       $thumbs.css('top', '-' + $i[0].offsetTop + 'px');
+      var $last = $thumbs.find('img:last');
+      var wh = $window.height();
+      var bottom = $last.offset().top + $last.height();
+      if (bottom < wh) {
+        $thumbs.css('top', '-' + ($thumbs.height() - wh + $last.height() + 14) + 'px');
+      }
     };
     show($('.thumbs > img:first'));
 
