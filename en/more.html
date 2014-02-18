@@ -79,6 +79,16 @@ title: more
     $thumbs.find('img').on('click', function(ev) {
       show($(ev.target), false);
     });
+    $show.on('click', function(ev) {
+      if ( ! $(ev.target).hasClass('show')) return;
+      var $sel = $('.thumbs > img.selected');
+      var w2 = $(window).width() / 2;
+      var h10 = $(window).height() / 10;
+      if (ev.offsetY < h10) show($('.thumbs > img:first'));
+      else if (ev.offsetY > h10 * 9) show($('.thumbs > img:last'));
+      else if (ev.offsetX > w2) show($sel.next());
+      else show($sel.prev());
+    });
   });
 </script>
 
