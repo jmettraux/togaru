@@ -146,10 +146,14 @@ $header_height: 63px;
       width: 77px;
       border-top: 3px solid black;
       border-left: 2px solid black;
+      @include filter(grayscale(100%));
     }
     img.selected {
-      opacity: 0.55;
-      border-right: 2px solid grey;
+      //opacity: 0.1;
+      //@include filter(blur(2px) grayscale(100%));
+      //margin: 3px;
+      //@include filter(blur(3px));
+      margin-left: 20%;
     }
   }
 }
