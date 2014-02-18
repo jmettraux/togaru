@@ -37,7 +37,7 @@ title: more
       $thumbs.append('<img src="' + src + '" />');
     });
 
-    var show = function($img) {
+    var show = function($img, mouseover) {
 
       if ($img.length < 1) return;
 
@@ -51,7 +51,11 @@ title: more
       $img.addClass('selected');
       var $i = $img.prev();
       if ($i.length < 1) $i = $img;
+
+      if (mouseover) return;
+
       $thumbs.css('top', '-' + $i[0].offsetTop + 'px');
+
       var $last = $thumbs.find('img:last');
       var wh = $window.height();
       var bottom = $last.offset().top + $last.height();
@@ -64,13 +68,16 @@ title: more
     $(window).on('keyup', function(ev) {
       var kc = ev.keyCode;
       var $sel = $('.thumbs > img.selected');
-      if (kc === 74 || kc === 40) show($sel.next());
-      else if (kc === 75 || kc === 38) show($sel.prev());
-      else if (kc === 72) show($('.thumbs > img:first'));
-      else if (kc === 76) show($('.thumbs > img:last'));
+      if (kc === 74 || kc === 40 || kc === 39) show($sel.next());
+      else if (kc === 75 || kc === 38 || kc === 37) show($sel.prev());
+      else if (kc === 72 || kc === 33) show($('.thumbs > img:first'));
+      else if (kc === 76 || kc === 34) show($('.thumbs > img:last'));
     });
+    //$thumbs.find('img').on('mouseover', function(ev) {
+    //  show($(ev.target), true);
+    //});
     $thumbs.find('img').on('click', function(ev) {
-      show($(ev.target));
+      show($(ev.target), false);
     });
   });
 </script>
