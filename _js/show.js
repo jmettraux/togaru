@@ -85,6 +85,29 @@ var TgShow = (function() {
     $('.show').each(function(i, e) {
       self.initShow($(e));
     });
+
+    var go = function($sel, goal) {
+      $sel.each(function(i, e) {
+        var $s = $(e);
+        var $g = null;
+        if      (goal === 'next') $g = $s.next();
+        else if (goal === 'prev') $g = $s.prev();
+        else if (goal === 'first') $g = $s.closest('.thumbs').find('img:first');
+        else if (goal === 'last') $g = $s.closest('.thumbs').find('img:last');
+        TgShow.show($g);
+      });
+    };
+
+    $(window).on('keyup', function(ev) {
+      var kc = ev.keyCode;
+      //console.log(kc);
+      var $sel = $('.thumbs > img.selected');
+      if      (kc === 74 || kc === 40) go($sel, 'next');
+      else if (kc === 75 || kc === 38) go($sel, 'prev');
+      else if (kc === 72 || kc === 33) go($sel, 'first');
+      else if (kc === 76 || kc === 34) go($sel, 'last');
+      // 37 left 39 right
+    });
   };
 
   //
