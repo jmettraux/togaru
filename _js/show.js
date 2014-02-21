@@ -77,10 +77,9 @@ var TgShow = (function() {
     $show.on('click', function(ev) {
       var $show = $(ev.target);
       if ( ! $show.hasClass('show')) return;
-      var $sel = $('.thumbs > img.selected');
-      var $w = $(window);
-      var w2 = $w.width() / 2;
-      var h10 = $w.height() / 10;
+      var $sel = $show.find('.thumbs > img.selected');
+      var w2 = $show.width() / 2;
+      var h10 = $show.height() / 10;
       if (ev.offsetY < h10)
         TgShow.show($show.find('.thumbs > img:first'));
       else if (ev.offsetY > h10 * 9)

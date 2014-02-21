@@ -6,6 +6,7 @@
 
 @import "compass/reset";
 @import "compass/css3";
+@import "compass/css3/user-interface"; // for user-select
 
 //$iconSpritePath: "/images/glyphicons-halflings.png" !default;
 //$iconWhiteSpritePath: "/images/glyphicons-halflings-white.png" !default;
@@ -134,8 +135,9 @@ $header_height: 63px;
   padding-top: $header_height;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  //z-index: -1;
   overflow-y: hidden;
+  @include user-select(none);
   img {
     display: none;
     margin: auto;
