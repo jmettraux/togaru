@@ -43,8 +43,8 @@ var TgShow = (function() {
     var wh = $(window).height();
     var src = $img.prop('src');
 
-    $show.css('height', '' + (wh - $('.header').height() - 70) + 'px');
-      // set height to window height
+    $show.css('height', '' + (wh - $show.offset().top - 70) + 'px');
+      // set height to window height, why 70?
 
     $show.children('img').each(function(i, e) {
       if (e.src === src) $(e).css('display', 'block');
