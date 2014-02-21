@@ -37,16 +37,19 @@ var TgShow = (function() {
     if ($img.length < 1) return;
 
     $show = $img.closest('.show');
+    if ( ! $show.is(':visible')) return;
 
     var $ts = $show.find('.thumbs');
     var wh = $(window).height();
     var src = $img.prop('src');
 
-    $show.css('height', '' + (wh - $('.header').height()) + 'px');
-      // TODO: nuke, that, set 100% height via css!
-    $show.css('background', 'url(' + src + ') no-repeat center center fixed');
-    $show.css('background-position', '50% 70%');
-    $show.css('background-size', 'auto 80%');
+    $show.css('height', '' + (wh - $('.header').height() - 70) + 'px');
+      // set height to window height
+
+    $show.children('img').each(function(i, e) {
+      if (e.src === src) $(e).css('display', 'block');
+      else $(e).css('display', 'none');
+    });
 
     $ts.find('img').removeClass('selected');
     $img.addClass('selected');
