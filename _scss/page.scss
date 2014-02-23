@@ -169,20 +169,26 @@ $header_height: 63px;
 
 .heads {
   text-align: center;
-  //margin-left: 1.0em;
-  margin-bottom: 1.0em;
+  margin-top: 12px;
+  margin-bottom: 3px;
   .head {
-    margin-top: 1.0em;
+    position: relative;
     text-align: left;
     display: inline-block;
-    width: 100px;
+    width: 90px;
+    height: 80px;
+    overflow: hidden;
     vertical-align: top;
     img {
-      width: 50px;
+      width: 100px;
       @include filter(blur(2px) grayscale(100%));
     }
     .text {
-      margin-top: 0.5em;
+      position: absolute;
+      bottom: 3px;
+      background-color: black;
+      width: 100%;
+      padding-left: 2px;
       opacity: 0.5;
     }
   }
