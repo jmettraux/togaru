@@ -1,92 +1,112 @@
 ---
-layout: en
+layout: page_en
 title: street
-label: Tony Garcia Image Capture
 ---
 
-{% include menu_en.html %}
+<div class="heads">
 
-<div class="main street">
-
-  <div class="slideshow">
-    <!--
-    <img src="/images/photos/s0000_digital.jpg" />
-    -->
-    <img src="/images/photos/s0001_digital.jpg" />
-    <img src="/images/photos/s0003_digital.jpg" />
-    <img src="/images/photos/s0004_digital.jpg" />
-  </div>
-
-  <div class="entry">
-    <div class="photo">
-      <a href="street/bruxelles.html">
-        <img src="/images/photos/street/bruxelles/L1115717.jpg" />
-      </a>
-    </div>
+  <div class="head" data-tg-head="bruxelles">
+    <img src="/images/photos/street/bruxelles/L1115717.jpg" />
     <div class="text">
-      <h1>
-        <a href="street/bruxelles.html">
-          Bruxelles
-        </a>
-      </h1>
-      <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id tortor aliquam, pellentesque nulla eget, auctor augue.
-      </p>
+      bruxelles
     </div>
   </div>
-
-  <div class="entry">
-    <div class="photo">
-      <a href="street/daisen.html">
-        <img src="/images/photos/street/daisen/L1110250.jpg" />
-      </a>
-    </div>
+  <div class="head" data-tg-head="hiroshima">
+    <img src="/images/photos/street/hiroshima/L9999609.jpg" />
     <div class="text">
-      <h1>
-        <a href="street/daisen.html">
-          Daisen
-        </a>
-      </h1>
-      <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id tortor aliquam, pellentesque nulla eget, auctor augue.
-      </p>
+      hiroshima
     </div>
   </div>
-
-  <div class="entry">
-    <div class="photo">
-      <a href="street/hiroshima.html">
-        <img src="/images/photos/street/hiroshima/L1000234.jpg" />
-      </a>
-    </div>
+  <div class="head" data-tg-head="tokyo">
+    <img src="/images/photos/street/tokyo/L9053380-2.jpg" />
     <div class="text">
-      <h1>
-        <a href="street/hiroshima.html">
-          Hiroshima
-        </a>
-      </h1>
-      <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id tortor aliquam, pellentesque nulla eget, auctor augue.
-      </p>
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="photo">
-      <a href="street/tokyo.html">
-        <img src="/images/photos/street/tokyo/L9053380-2.jpg" />
-      </a>
-    </div>
-    <div class="text">
-      <h1>
-        <a href="street/tokyo.html">
-          Tokyo
-        </a>
-      </h1>
-      <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id tortor aliquam, pellentesque nulla eget, auctor augue.
-      </p>
+      tokyo
     </div>
   </div>
 </div>
+
+<div class="show" data-tg-head="bruxelles">
+
+  <img src="/images/photos/street/bruxelles/L1115717.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115719.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115721-2.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115722.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115733.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115734.jpg" />
+  <img src="/images/photos/street/bruxelles/L1115739.jpg" />
+</div>
+
+<div class="show" data-tg-head="tokyo">
+
+  <img src="/images/photos/street/tokyo/L9053380-2.jpg" />
+  <img src="/images/photos/street/tokyo/L9053387.jpg" />
+  <img src="/images/photos/street/tokyo/L9997656.jpg" />
+  <img src="/images/photos/street/tokyo/L9997667.jpg" />
+  <img src="/images/photos/street/tokyo/L9997799-2.jpg" />
+</div>
+
+<div class="show" data-tg-head="hiroshima">
+
+  <img src="/images/photos/street/hiroshima/L1000234.jpg" />
+  <img src="/images/photos/street/hiroshima/L9996379.jpg" />
+  <img src="/images/photos/street/hiroshima/L9996380.jpg" />
+  <img src="/images/photos/street/hiroshima/L9996765.jpg" />
+  <img src="/images/photos/street/hiroshima/L9999609.jpg" />
+  <img src="/images/photos/street/hiroshima/L9999844.jpg" />
+  <img src="/images/photos/street/hiroshima/L9999873.jpg" />
+</div>
+
+<script>
+var TgHeads = (function() {
+
+  var self = this;
+
+  //
+  // protected
+
+  //
+  // public
+
+  this.selectHead = function($head) {
+
+    if ($head.length < 1) return;
+
+    $head.closest('.heads').find('.head').removeClass('selected');
+    $head.addClass('selected');
+    var h = $head.attr('data-tg-head');
+    $('.show[data-tg-head]').hide();
+    var $show = $('.show[data-tg-head="' + h + '"]');
+    $show.show();
+    $show.find('img.selected').click();
+  };
+
+  this.initHeads = function($heads) {
+
+    $heads.find('.head').on('click', function(ev) {
+      TgHeads.selectHead($(ev.target).closest('.head'));
+    });
+
+    TgHeads.selectHead($heads.find('.head:first'));
+  };
+
+  this.init = function() {
+
+    $('.show[data-tg-head]').hide();
+    $('div.heads').each(function(i, e) { TgHeads.initHeads($(e)); });
+
+    $(window).on('keyup', function(ev) {
+      var kc = ev.keyCode;
+      var $sel = $('.head.selected');
+      if      (kc === 37) TgHeads.selectHead($sel.prev());
+      else if (kc === 39) TgHeads.selectHead($sel.next());
+    });
+  };
+
+  //
+  // over.
+
+  return this;
+
+}).apply({});
+</script>
 

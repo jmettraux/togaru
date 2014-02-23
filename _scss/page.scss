@@ -35,6 +35,10 @@ $fa-font-path: "/fonts" !default;
 //  }
 //}
 
+.hidden {
+  display: none;
+}
+
 body {
   font-family: Helvetica;
   font-size: 16px;
@@ -159,6 +163,36 @@ $header_height: 63px;
       //margin: 3px;
       //@include filter(blur(3px));
       margin-left: 20%;
+    }
+  }
+}
+
+.heads {
+  text-align: center;
+  //margin-left: 1.0em;
+  margin-bottom: 1.0em;
+  .head {
+    margin-top: 1.0em;
+    text-align: left;
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+    img {
+      width: 50px;
+      @include filter(blur(2px) grayscale(100%));
+    }
+    .text {
+      margin-top: 0.5em;
+      opacity: 0.5;
+    }
+  }
+  .head.selected {
+    //margin-top: 3.5em;
+    img {
+      @include filter(grayscale(100%));
+    }
+    .text {
+      opacity: 1.0;
     }
   }
 }
