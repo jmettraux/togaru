@@ -106,8 +106,9 @@ var TgHeads = (function() {
     if ($head.length < 1) return;
 
     var $heads = $head.closest('.heads');
+    var $slide = $head.closest('.head-slide');
 
-    $heads.find('.head').removeClass('selected');
+    $slide.find('.head').removeClass('selected');
     $head.addClass('selected');
     var h = $head.attr('data-tg-head');
     $('.show[data-tg-head]').hide();
@@ -115,18 +116,22 @@ var TgHeads = (function() {
     $show.show();
     $show.find('img.selected').click();
 
-    $heads.css('padding-left', '0px');
+    $slide.css('left', '0px');
     var hw = $heads.width();
     var ol = $head.offset().left;
     var w = $head.width();
-    //console.log(hw);
-    //console.log(ol);
-    //console.log(w);
-    $heads.css('padding-left', (hw / 2 - ol - w / 2) + 'px');
-    //console.log([ 'padding-left', (hw / 2 - ol - w / 2) + 'px' ]);
+    console.log(hw);
+    console.log(ol);
+    console.log(w);
+    $slide.css('left', (hw / 2 - ol - w / 2) + 'px');
+    console.log([ 'left', (hw / 2 - ol - w / 2) + 'px' ]);
   };
 
   this.initHeads = function($heads) {
+
+    $heads.append('<div class="head-slide"></div>');
+    $slide = $heads.find('.head-slide');
+    $heads.find('.head').each(function(i, e) { $slide.append(e); });
 
     $heads.find('.head').on('click', function(ev) {
       TgHeads.selectHead($(ev.target).closest('.head'));

@@ -151,6 +151,11 @@ $header_height: 63px;
   background-color: #222222;
   width: 100%;
   @include user-select(none);
+  .head-slide {
+    position: relative;
+    overflow: hidden;
+    width: 9000px;
+  }
   .head {
     position: relative;
     text-align: left;
@@ -159,6 +164,7 @@ $header_height: 63px;
     height: 80px;
     overflow: hidden;
     vertical-align: top;
+    margin-right: 3px;
     img {
       width: 100px;
       @include filter(blur(2px) grayscale(100%));
