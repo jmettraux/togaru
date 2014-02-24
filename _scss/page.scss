@@ -71,6 +71,7 @@ $header_height: 63px;
   color: black;
   width: 7000px;
   height: $header_height;
+  z-index: 2;
   * {
     height: 100%;
     float: left;
@@ -105,8 +106,11 @@ $header_height: 63px;
 }
 
 .content {
-  padding-top: $header_height;
+  //padding-top: $header_height;
   //height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .about {
@@ -134,43 +138,18 @@ $header_height: 63px;
   }
 }
 
-.show {
-  position: relative;
-  padding-top: $header_height;
-  width: 100%;
-  height: 100%;
-  //z-index: -1;
-  overflow-y: hidden;
-  @include user-select(none);
-  img {
-    display: none;
-    margin: auto;
-    height: 80%;
-  }
-  .thumbs {
-    position: absolute;
-    top: 0px;
-    img {
-      display: block;
-      width: 77px;
-      border-top: 3px solid black;
-      border-left: 2px solid black;
-      @include filter(grayscale(100%));
-    }
-    img.selected {
-      //opacity: 0.1;
-      //@include filter(blur(2px) grayscale(100%));
-      //margin: 3px;
-      //@include filter(blur(3px));
-      margin-left: 20%;
-    }
-  }
+.no-heads {
+  padding-top: $header_height + 7px;
 }
 
 .heads {
   text-align: center;
-  margin-top: 12px;
+  //margin-top: 12px;
+  padding-top: $header_height + 7px;
+  padding-bottom: 4px;
   margin-bottom: 3px;
+  background-color: #222222;
+  width: 100%;
   .head {
     position: relative;
     text-align: left;
@@ -199,6 +178,40 @@ $header_height: 63px;
     }
     .text {
       opacity: 1.0;
+    }
+  }
+}
+
+.show {
+  position: relative;
+  padding-top: $header_height;
+  width: 100%;
+  height: 100%;
+  //z-index: -1;
+  overflow-y: hidden;
+  @include user-select(none);
+  img {
+    display: none;
+    margin: auto;
+    height: 80%;
+  }
+  .thumbs {
+    position: absolute;
+    top: 0px;
+    img {
+      display: block;
+      width: 77px;
+      border-top: 2px solid black;
+      border-bottom: 1px solid black;
+      border-left: 2px solid black;
+      @include filter(grayscale(100%));
+    }
+    img.selected {
+      //opacity: 0.1;
+      //@include filter(blur(2px) grayscale(100%));
+      //margin: 3px;
+      //@include filter(blur(3px));
+      margin-left: 20%;
     }
   }
 }

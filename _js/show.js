@@ -42,8 +42,9 @@ var TgShow = (function() {
     var $ts = $show.find('.thumbs');
     var wh = $(window).height();
     var src = $img.prop('src');
+    var sot = $show.offset().top;
 
-    $show.css('height', '' + (wh - $show.offset().top - 70) + 'px');
+    $show.css('height', '' + (wh - sot - 70) + 'px');
       // set height to window height, why 70?
 
     $show.children('img').each(function(i, e) {
@@ -61,7 +62,7 @@ var TgShow = (function() {
     var $last = $ts.find('img:last');
     var bottom = $last.offset().top + $last.height();
     if (bottom < wh) {
-      $ts.css('top', '-' + ($ts.height() - wh + $last.height() + 14) + 'px');
+      $ts.css('top', '-' + ($ts.height() - wh + sot + $last.height() - 45) + 'px');
     }
   };
 
