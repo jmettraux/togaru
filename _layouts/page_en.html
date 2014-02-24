@@ -48,6 +48,8 @@ layout: null
     //$(document).ready(Cart.init);
     $(document).ready(function() {
 
+      // TODO: move that to its own lib/namespace!
+
       var cat = window.location.href.match(/\/en\/([^\.\/]+)/)[1];
       $('a.item[data-cat="' + cat + '"]').addClass('selected');
 
