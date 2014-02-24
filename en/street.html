@@ -131,8 +131,8 @@ var TgHeads = (function() {
     $(window).on('keyup', function(ev) {
       var kc = ev.keyCode;
       var $sel = $('.head.selected');
-      if      (kc === 37) TgHeads.selectHead($sel.prev());
-      else if (kc === 39) TgHeads.selectHead($sel.next());
+      if      (kc === 37 || kc === 72) TgHeads.selectHead($sel.prev());
+      else if (kc === 39 || kc === 76) TgHeads.selectHead($sel.next());
     });
   };
 

@@ -119,8 +119,8 @@ var TgShow = (function() {
       var $sel = $('.thumbs > img.selected');
       if      (kc === 74 || kc === 40) go($sel, 'next');
       else if (kc === 75 || kc === 38) go($sel, 'prev');
-      else if (kc === 72 || kc === 33) go($sel, 'first');
-      else if (kc === 76 || kc === 34) go($sel, 'last');
+      else if (kc === 33) go($sel, 'first');
+      else if (kc === 34) go($sel, 'last');
       // 37 left 39 right
     });
   };
