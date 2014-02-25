@@ -64,6 +64,12 @@ var TgShow = (function() {
     if (bottom < wh) {
       $ts.css('top', '-' + ($ts.height() - wh + sot + $last.height() - 45) + 'px');
     }
+
+    var b = $show.attr('data-tg-bm');
+    if (b && window.localStorage) {
+      var h = $show.attr('data-tg-head');
+      localStorage[h + '/' + b + '.show'] = $img.attr('src');
+    }
   };
 
   this.initShow = function($show) {
@@ -73,7 +79,6 @@ var TgShow = (function() {
     $show.find('img').each(function(i, e) {
       $thumbs.append('<img src="' + $(e).prop('src') + '" />');
     });
-    TgShow.show($show.find('.thumbs > img:first'));
 
     $show.on('click', function(ev) {
       var $show = $(ev.target);
@@ -93,6 +98,17 @@ var TgShow = (function() {
     $thumbs.find('img').on('click', function(ev) {
       TgShow.show($(ev.target));
     });
+
+    var b = $show.attr('data-tg-bm');
+    if (b && window.localStorage) {
+      var h = $show.attr('data-tg-head');
+      var src = localStorage[h + '/' + b + '.show'];
+      TgShow.show($thumbs.find('img[src="' + src + '"]'));
+    }
+
+    if ($thumbs.find('.selected').length < 1) {
+      TgShow.show($thumbs.find('img:first'));
+    }
   };
 
   this.init = function() {

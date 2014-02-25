@@ -52,6 +52,11 @@ var TgHeads = (function() {
     var ol = $head.offset().left;
     var w = $head.width();
     $slide.css('left', (hw / 2 - ol - w / 2) + 'px');
+
+    var b = $heads.attr('data-tg-bm');
+    if (b && window.localStorage) {
+      localStorage[b + '.heads'] = $head.find('img').attr('src');
+    }
   };
 
   this.initHeads = function($heads) {
@@ -64,7 +69,15 @@ var TgHeads = (function() {
       TgHeads.selectHead($(ev.target).closest('.head'));
     });
 
-    TgHeads.selectHead($heads.find('.head:first'));
+    var b = $heads.attr('data-tg-bm');
+    if (b && window.localStorage) {
+      var src = localStorage[b + '.heads'];
+      TgHeads.selectHead($heads.find('img[src="' + src + '"]').closest('.head'));
+    }
+
+    if ($heads.find('.head.selected').length < 1) {
+      TgHeads.selectHead($heads.find('.head:first'));
+    }
   };
 
   this.init = function() {
