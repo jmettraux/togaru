@@ -32,12 +32,12 @@ var TgShow = (function() {
   //
   // public
 
-  this.show = function($img) {
+  this.show = function($img, all) {
 
     if ($img.length < 1) return;
 
     $show = $img.closest('.show');
-    if ( ! $show.is(':visible')) return;
+    if ( ! all && ! $show.is(':visible')) return;
 
     var $ts = $show.find('.thumbs');
     var wh = $(window).height();
@@ -117,7 +117,7 @@ var TgShow = (function() {
       self.initShow($(e));
     });
 
-    var go = function($sel, goal) {
+    var go = function($sel, goal, all) {
       $sel.each(function(i, e) {
         var $s = $(e);
         var $g = null;
@@ -125,7 +125,7 @@ var TgShow = (function() {
         else if (goal === 'prev') $g = $s.prev();
         else if (goal === 'first') $g = $s.closest('.thumbs').find('img:first');
         else if (goal === 'last') $g = $s.closest('.thumbs').find('img:last');
-        TgShow.show($g);
+        TgShow.show($g, all);
       });
     };
 
@@ -137,6 +137,7 @@ var TgShow = (function() {
       else if (kc === 75 || kc === 38) go($sel, 'prev');
       else if (kc === 33) go($sel, 'first');
       else if (kc === 34) go($sel, 'last');
+      else if (kc === 83) go($sel, 'first', true); // "s"tart and all: true
       // 37 left 39 right
     });
   };

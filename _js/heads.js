@@ -85,11 +85,18 @@ var TgHeads = (function() {
     $('.show[data-tg-head]').hide();
     $('div.heads').each(function(i, e) { TgHeads.initHeads($(e)); });
 
+    var goStart = function() {
+      $('div.heads').each(function(i, e) {
+        TgHeads.selectHead($(e).find('.head:first'));
+      });
+    };
+
     $(window).on('keyup', function(ev) {
       var kc = ev.keyCode;
       var $sel = $('.head.selected');
       if      (kc === 37 || kc === 72) TgHeads.selectHead($sel.prev());
       else if (kc === 39 || kc === 76) TgHeads.selectHead($sel.next());
+      else if (kc === 83) goStart();
     });
   };
 
