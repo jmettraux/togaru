@@ -74,6 +74,8 @@ var TgShow = (function() {
 
   this.initShow = function($show) {
 
+    $show.css('opacity', '0.0');
+
     $show.append('<div class="thumbs"></div>');
     var $thumbs = $show.find('.thumbs');
     $show.find('img').each(function(i, e) {
@@ -109,6 +111,8 @@ var TgShow = (function() {
     if ($thumbs.find('.selected').length < 1) {
       TgShow.show($thumbs.find('img:first'));
     }
+
+    $show.fadeTo(300, 1.0);
   };
 
   this.init = function() {

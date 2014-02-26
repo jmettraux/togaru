@@ -61,6 +61,8 @@ var TgHeads = (function() {
 
   this.initHeads = function($heads) {
 
+    $heads.css('opacity', '0.0');
+
     $heads.append('<div class="head-slide"></div>');
     $slide = $heads.find('.head-slide');
     $heads.find('.head').each(function(i, e) { $slide.append(e); });
@@ -78,6 +80,8 @@ var TgHeads = (function() {
     if ($heads.find('.head.selected').length < 1) {
       TgHeads.selectHead($heads.find('.head:first'));
     }
+
+    $heads.fadeTo(200, 1.0);
   };
 
   this.init = function() {
