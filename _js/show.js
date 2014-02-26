@@ -65,7 +65,7 @@ var TgShow = (function() {
       $ts.css('top', '-' + ($ts.height() - wh + sot + $last.height() - 45) + 'px');
     }
 
-    var b = $show.attr('data-tg-bm');
+    var b = $show.attr('data-tg-bm') || $show.parent().attr('data-tg-bm');
     if (b && window.localStorage) {
       var h = $show.attr('data-tg-head');
       localStorage[h + '/' + b + '.show'] = $img.attr('src');
@@ -99,7 +99,7 @@ var TgShow = (function() {
       TgShow.show($(ev.target));
     });
 
-    var b = $show.attr('data-tg-bm');
+    var b = $show.attr('data-tg-bm') || $show.parent().attr('data-tg-bm');
     if (b && window.localStorage) {
       var h = $show.attr('data-tg-head');
       var src = localStorage[h + '/' + b + '.show'];
