@@ -35,38 +35,17 @@ layout: null
 
   </div>
 
-  <!--
-  <script src="/js/jquery-1.10.2.min.js"></script>
-  -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
   </script>
   <script src="/js/site.js">
   </script>
 
   <script>
-    //$(document).ready(Tg.init);
     //$(document).ready(Cart.init);
-    $(document).ready(function() {
-
-      // TODO: move that to its own lib/namespace!
-
-      var cat = window.location.href.match(/\/en\/([^\.\/]+)/)[1];
-      $('a.item[data-cat="' + cat + '"]').addClass('selected');
-
-      $('.header > .left').on('click', function(ev) {
-        window.location.href = '/en/index.html';
-      });
-
-      $('a[data-cat]').on('click', function(ev) {
-        var $a = $(ev.target);
-        var cat = $a.attr('data-cat');
-        window.location.href = '/en/' + cat + '.html';
-      });
-    });
+    $(document).ready(TgMenu.init);
     $(document).ready(TgShow.init);
     $(document).ready(TgHeads.init);
   </script>
-
 </body>
 </html>
 
