@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby
 
-target = File.absolute_path(ARGV[0] || '.')
+target =
+  if ARGV[0]
+    File.absolute_path(File.dirname(__FILE__) + '/../images/photos/' + ARGV[0])
+  else
+    '.'
+  end
+p target
 
 Dir["./*"].each do |path|
 
@@ -9,6 +15,10 @@ Dir["./*"].each do |path|
   ext = File.extname(path)
   bas = File.basename(path, ext)
   ext = ext.downcase
+
+  bass = bas.split(' ')
+  bass.delete('copia')
+  bas = bass.join('_')
 
   info = `identify "#{path}"`
   info = info[info.index('JPEG')..-1]
