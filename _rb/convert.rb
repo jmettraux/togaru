@@ -37,10 +37,18 @@ Dir["./*"].each do |path|
   puts(s)
 
   if ARGV[0] # else it's a dry run
+
     system(s)
     info = `identify "#{tpath}"`
     info = info[info.index('JPEG')..-1]
     puts '    ' + info
   end
+end
+
+if ARGV[0]
+  s = "ruby #{File.dirname(__FILE__)}/list.rb #{ARGV[0]}"
+  puts
+  puts(s)
+  puts `#{s}`
 end
 
