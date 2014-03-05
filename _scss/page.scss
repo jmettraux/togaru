@@ -194,22 +194,24 @@ $header_height: 63px;
 
 .show {
   position: relative;
-  padding-top: $header_height;
+  //padding-top: $header_height;
   width: 100%;
   height: 100%;
   //z-index: -1;
   overflow-y: hidden;
   @include user-select(none);
   img {
+    padding-top: 10px;
     display: none;
     margin: auto;
-    height: 80%;
+    height: 94%;
   }
   .thumbs {
     position: absolute;
     top: 0px;
     img {
       display: block;
+      padding-top: 0;
       width: 77px;
       border-top: 2px solid black;
       border-bottom: 1px solid black;

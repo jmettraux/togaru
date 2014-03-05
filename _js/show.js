@@ -44,8 +44,7 @@ var TgShow = (function() {
     var src = $img.prop('src');
     var sot = $show.offset().top;
 
-    $show.css('height', '' + (wh - sot - 70) + 'px');
-      // set height to window height, why 70?
+    $show.css('height', '' + (wh - sot) + 'px');
 
     $show.children('img').each(function(i, e) {
       if (e.src === src) $(e).css('display', 'block');
@@ -62,7 +61,7 @@ var TgShow = (function() {
     var $last = $ts.find('img:last');
     var bottom = $last.offset().top + $last.height();
     if (bottom < wh) {
-      $ts.css('top', '-' + ($ts.height() - wh + sot + $last.height() - 45) + 'px');
+      $ts.css('top', '-' + ($ts.height() - wh + sot + $last.height()) + 'px');
     }
 
     var b = $show.attr('data-tg-bm') || $show.parent().attr('data-tg-bm');
@@ -135,7 +134,7 @@ var TgShow = (function() {
 
     $(window).on('keyup', function(ev) {
       var kc = ev.keyCode;
-      //console.log(kc);
+      console.log(kc);
       var $sel = $('.thumbs > img.selected');
       if      (kc === 74 || kc === 40) go($sel, 'next');
       else if (kc === 75 || kc === 38) go($sel, 'prev');
