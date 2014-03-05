@@ -29,6 +29,22 @@ var TgShow = (function() {
   //
   // protected
 
+  var zoom = function($sel) {
+
+    if ($('.zoom').is(':visible')) {
+      $('.zoom').remove();
+    }
+    else {
+      var $sel = $sel.filter(':visible');
+      var src = $sel.attr('src');
+      $('body').append('<div class="zoom"><img src="' + src + '" /></div>');
+      var $w = $(window);
+      $('.zoom').css('width', $w.width() + 'px');
+      $('.zoom').css('height', $w.height() + 'px');
+      $('.zoom > img').on('click', function() { $('.zoom').remove(); });
+    }
+  };
+
   //
   // public
 
@@ -116,8 +132,13 @@ var TgShow = (function() {
 
   this.init = function() {
 
-    $('.show').each(function(i, e) {
+    var $show = $('.show');
+
+    $show.each(function(i, e) {
       self.initShow($(e));
+    });
+    $show.children('img').on('click', function(ev) {
+      zoom($(ev.target));
     });
 
     var go = function($sel, goal, all) {
@@ -134,13 +155,14 @@ var TgShow = (function() {
 
     $(window).on('keyup', function(ev) {
       var kc = ev.keyCode;
-      console.log(kc);
+      //console.log(kc);
       var $sel = $('.thumbs > img.selected');
       if      (kc === 74 || kc === 40) go($sel, 'next');
       else if (kc === 75 || kc === 38) go($sel, 'prev');
-      else if (kc === 33) go($sel, 'first');
-      else if (kc === 34) go($sel, 'last');
+      else if (kc === 33) go($sel, 'first'); // pgup
+      else if (kc === 34) go($sel, 'last'); // pgdown
       else if (kc === 83) go($sel, 'first', true); // "s"tart and all: true
+      else if (kc === 32) zoom($sel); // space
       // 37 left 39 right
     });
   };

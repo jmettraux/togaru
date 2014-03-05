@@ -228,3 +228,15 @@ $header_height: 63px;
   }
 }
 
+.zoom {
+  position: absolute;
+  z-index: 999;
+  background-color: black;
+  text-align: center;
+  img {
+    margin: auto;
+    margin-top: 3px;
+    height: 99%;
+  }
+}
+
