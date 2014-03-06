@@ -18,5 +18,5 @@ The various open source tools used obey their own licenses and copyrights.
 
 All the photographies on this site/repository are copyright Antonio Garcia Algarra.
 
-The textual content is copyright Antonia Garcia Algarra.
+The textual content is copyright Antonio Garcia Algarra.
 
