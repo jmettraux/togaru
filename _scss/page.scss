@@ -198,7 +198,7 @@ $header_height: 63px;
   width: 100%;
   height: 100%;
   //z-index: -1;
-  overflow-y: hidden;
+  overflow: hidden;
   @include user-select(none);
   img {
     padding-top: 10px;
