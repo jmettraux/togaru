@@ -77,7 +77,7 @@ var TgShow = (function() {
     var $last = $ts.find('img:last');
     var bottom = $last.offset().top + $last.height();
     if (bottom < wh) {
-      $ts.css('top', '-' + ($ts.height() - wh + sot + $last.height()) + 'px');
+      $ts.css('top', '' + (- $ts.height() + wh - sot) + 'px');
     }
 
     var b = $show.attr('data-tg-bm') || $show.parent().attr('data-tg-bm');
