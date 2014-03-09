@@ -59,8 +59,9 @@ var TgShow = (function() {
     var wh = $(window).height();
     var src = $img.prop('src');
     var sot = $show.offset().top;
+    var sh = wh - sot;
 
-    $show.css('height', '' + (wh - sot) + 'px');
+    $show.css('height', '' + sh + 'px');
 
     $show.children('img').each(function(i, e) {
       if (e.src === src) $(e).css('display', 'block');
@@ -77,7 +78,19 @@ var TgShow = (function() {
     var $last = $ts.find('img:last');
     var bottom = $last.offset().top + $last.height();
     if (bottom < wh) {
-      $ts.css('top', '' + (- $ts.height() + wh - sot) + 'px');
+      var wait = $ts.height() < sh ? 1400 : 400;
+      window.setTimeout(function() {
+        $ts.css('top', '-' + ($ts.height() - sh) + 'px');
+      }, wait);
+      //var counter = 0;
+      //var f = function() {
+      //  console.log(counter);
+      //  counter += 1; if (counter > 7) return;
+      //  if ($ts.height() < sh) return window.setTimeout(f, 400);
+      //  console.log('ok');
+      //  //console.log($last.is(':visible'));
+      //  $ts.css('top', '-' + ($ts.height() - sh) + 'px');
+      //}; f();
     }
 
     var b = $show.attr('data-tg-bm') || $show.parent().attr('data-tg-bm');
