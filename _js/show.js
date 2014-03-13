@@ -78,7 +78,7 @@ var TgShow = (function() {
     var $last = $ts.find('img:last');
     var bottom = $last.offset().top + $last.height();
     if (bottom < wh) {
-      var wait = $ts.height() < sh ? 1400 : 400;
+      var wait = $ts.height() < sh ? 1400 : 0;
       window.setTimeout(function() {
         $ts.css('top', '-' + ($ts.height() - sh) + 'px');
       }, wait);
