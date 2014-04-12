@@ -84,15 +84,6 @@ var TgShow = (function() {
       //var wait = $ts.height() < sh ? 1400 : 0;
       //window.setTimeout(setTop, wait);
       setTop(); window.setTimeout(setTop, 1400);
-      //var counter = 0;
-      //var f = function() {
-      //  console.log(counter);
-      //  counter += 1; if (counter > 7) return;
-      //  if ($ts.height() < sh) return window.setTimeout(f, 400);
-      //  console.log('ok');
-      //  //console.log($last.is(':visible'));
-      //  $ts.css('top', '-' + ($ts.height() - sh) + 'px');
-      //}; f();
     }
 
     var b = $show.attr('data-tg-bm') || $show.parent().attr('data-tg-bm');
