@@ -78,10 +78,12 @@ var TgShow = (function() {
     var $last = $ts.find('img:last');
     var bottom = $last.offset().top + $last.height();
     if (bottom < wh) {
-      var wait = $ts.height() < sh ? 1400 : 0;
-      window.setTimeout(function() {
+      var setTop = function() {
         $ts.css('top', '-' + ($ts.height() - sh) + 'px');
-      }, wait);
+      };
+      //var wait = $ts.height() < sh ? 1400 : 0;
+      //window.setTimeout(setTop, wait);
+      setTop(); window.setTimeout(setTop, 1400);
       //var counter = 0;
       //var f = function() {
       //  console.log(counter);
