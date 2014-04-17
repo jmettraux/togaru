@@ -52,7 +52,7 @@ var TgShow = (function() {
 
     if ($img.length < 1) return;
 
-    $show = $img.closest('.show');
+    var $show = $img.closest('.show');
     if ( ! all && ! $show.is(':visible')) return;
 
     var $ts = $show.find('.thumbs');
@@ -91,6 +91,15 @@ var TgShow = (function() {
       var h = $show.attr('data-tg-head');
       localStorage[h + '/' + b + '.show'] = $img.attr('src');
     }
+
+    // display 'location'
+
+    var $loc = $show.find('.location');
+    var i = 1;
+    $ts.children().each(function(j, e) {
+      if ($(e).is('.selected')) i = j + 1;
+    });
+    $loc.text('' + i + '/' + $ts.children().length);
   };
 
   this.initShow = function($show) {
@@ -102,6 +111,8 @@ var TgShow = (function() {
     $show.find('img').each(function(i, e) {
       $thumbs.append('<img src="' + $(e).prop('src') + '" />');
     });
+
+    $show.append('<div class="location">0/0</div>');
 
     $show.on('click', function(ev) {
       var $show = $(ev.target);
