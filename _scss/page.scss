@@ -228,6 +228,19 @@ $header_height: 63px;
   }
 }
 
+.show.text {
+  //margin: auto;
+  margin-top: 2em;
+  text-align: center;
+  h1 {
+    font-size: 170%;
+    margin-bottom: 1em;
+  }
+  p {
+    margin-bottom: 0.3em;
+  }
+}
+
 .zoom {
   position: absolute;
   z-index: 999;

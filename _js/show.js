@@ -112,7 +112,9 @@ var TgShow = (function() {
       $thumbs.append('<img src="' + $(e).prop('src') + '" />');
     });
 
-    $show.append('<div class="location">0/0</div>');
+    if ( ! $show.is('.text')) {
+      $show.append('<div class="location">0/0</div>');
+    }
 
     $show.on('click', function(ev) {
       var $show = $(ev.target);
