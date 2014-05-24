@@ -122,9 +122,12 @@ $header_height: 63px;
   }
   .text {
     display: inline-block;
-    width: 600px;
+    width: 770px;
+    margin-top: 1em;
     p {
       padding-top: 1em;
+    }
+    p.signature {
     }
     p.social {
       a {
