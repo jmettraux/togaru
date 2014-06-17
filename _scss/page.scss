@@ -114,15 +114,17 @@ $header_height: 63px;
 }
 
 .about {
-  img {
+  .portrait {
     display: inline-block;
-    width: 450px;
     padding: 14px;
     padding-bottom: 0;
+    img {
+      width: 500px;
+    }
   }
   .text {
     display: inline-block;
-    width: 770px;
+    width: 720px;
     margin-top: 1em;
     p {
       padding-top: 1em;
