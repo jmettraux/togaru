@@ -41,6 +41,7 @@ var TgShow = (function() {
 
     if ($sel.length < 1) return;
 
+    window.scrollTo(0, 0);
     var $sel = $sel.filter(':visible');
     var src = $sel.attr('src');
     $('body').append('<div class="zoom"><img src="' + src + '" /></div>');
@@ -185,6 +186,10 @@ var TgShow = (function() {
       else if (kc === 83) go($sel, 'first', true); // "s"tart and all: true
       else if (kc === 32) self.zoom($sel); // space
       // 37 left 39 right
+    });
+
+    $('.zoomable').on('click', function(ev) { // first one: about image
+      self.zoom($(ev.target));
     });
   };
 
