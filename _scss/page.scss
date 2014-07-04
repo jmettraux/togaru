@@ -114,24 +114,25 @@ $header_height: 63px;
 }
 
 .about {
-  .portrait {
-    display: inline-block;
-    padding: 14px;
-    padding-bottom: 0;
-    img {
-      width: 500px;
-    }
-  }
   .text {
     display: inline-block;
     width: 720px;
     margin-top: 1em;
+    margin-left: 80px;
+    margin-bottom: 2em;
     p {
       padding-top: 1em;
     }
     p.signature {
     }
+    p.portrait {
+      img {
+        width: 720px;
+      }
+    }
     p.social {
+      margin-top: 1em;
+      margin-bottom: 1em;
       a {
         display: block;
       }
