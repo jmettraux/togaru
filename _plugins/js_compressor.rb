@@ -21,13 +21,13 @@ module Jekyll
       $JS_MTIME = mtime
 
       FileUtils.mkdir_p('js')
-      #system(
-      #  "java -jar _tools/google-closure-compiler.jar --js #{libs.join(' ')}" +
-      #  " > js/site.js"
-      #)
       system(
-        "cat #{libs.join(' ')} > js/site.js"
+        "java -jar _tools/google-closure-compiler.jar --js #{libs.join(' ')}" +
+        " > js/site.js"
       )
+      #system(
+      #  "cat #{libs.join(' ')} > js/site.js"
+      #)
       puts "\nwrote js/site.js."
     end
   end
