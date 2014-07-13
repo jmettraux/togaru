@@ -108,24 +108,34 @@ title: null
     //$(document).ready(Cart.init);
     $(document).ready(function() {
 
-      $('div.left, a[data-cat]').on('mouseover', function(ev) {
-        var $t = $(ev.target);
-        if ($t.hasClass('selected')) return;
-        var cat = $t.attr('data-cat');
+      var tabOver = function($target) {
+
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        //console.log([ w, h ]);
+
+        if ($target.hasClass('selected')) return;
+        var cat = $target.attr('data-cat');
         $('div[data-cat], a[data-cat]').removeClass('selected');
-        $t.addClass('selected');
-        var or = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+        $target.addClass('selected');
+        var or = w > h ? 'landscape' : 'portrait';
         var src = $('.' + or + ' > img[data-cat=' + cat + ']').prop('src');
-        var $t = $('body');
+        var $b = $('body');
         var $c = $('.curtain');
+        var $bc = $('body, .curtain');
         $c.css('opacity', '1.0');
-        $c.css('width', '' + window.innerWidth + 'px');
-        $c.css('height', '' + window.innerHeight + 'px');
-        $t.css('background', 'url(' + src + ') no-repeat center center fixed');
-        $t.css('background-size', 'cover');
+        $bc.css('width', '' + w + 'px');
+        $bc.css('height', '' + h + 'px');
+        $b.css('background', 'url(' + src + ') no-repeat center center fixed');
+        $b.css('background-size', 'cover');
         $c.fadeTo(350, 0.0);
+      };
+
+      $('div.left, a[data-cat]').on('mouseover', function(ev) {
+        tabOver($(ev.target));
       });
-      $('div.left').trigger('mouseover');
+      //$('div.left').trigger('mouseover');
+      tabOver($('.left[data-cat="first"]'));
 
       $('a[data-cat]').on('click', function(ev) {
         var $a = $(ev.target);
