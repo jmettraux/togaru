@@ -29,6 +29,8 @@ var TgShow = (function() {
   //
   // protected
 
+  var IMAGE_MAX_HEIGHT = 500;
+
   //
   // public
 
@@ -63,8 +65,14 @@ var TgShow = (function() {
     var src = $img.prop('src');
     var sot = $show.offset().top;
     var sh = wh - sot;
+    var ih = sh > IMAGE_MAX_HEIGHT ? IMAGE_MAX_HEIGHT : sh;
 
     $show.css('height', '' + sh + 'px');
+    //$show.children('img').css('height', '' + ih + 'px');
+    $show.children('img').css({
+      "height": '' + ih + 'px',
+      "margin-top": '' + ((sh - ih) / 2) + 'px'
+    });
 
     $show.children('img').each(function(i, e) {
       if (e.src === src) $(e).css('display', 'block');
