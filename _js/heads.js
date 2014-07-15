@@ -55,7 +55,8 @@ var TgHeads = (function() {
 
     var b = $heads.attr('data-tg-bm');
     if (b && window.localStorage) {
-      localStorage[b + '.heads'] = $head.find('img').attr('src');
+      try { localStorage[b + '.heads'] = $head.find('img').attr('src'); }
+      catch (ex) {}
     }
   };
 
@@ -73,8 +74,11 @@ var TgHeads = (function() {
 
     var b = $heads.attr('data-tg-bm');
     if (b && window.localStorage) {
-      var src = localStorage[b + '.heads'];
-      TgHeads.selectHead($heads.find('img[src="' + src + '"]').closest('.head'));
+      try {
+        var src = localStorage[b + '.heads'];
+        TgHeads.selectHead($heads.find('img[src="' + src + '"]').closest('.head'));
+      }
+      catch (ex) {}
     }
 
     if ($heads.find('.head.selected').length < 1) {

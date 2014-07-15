@@ -100,7 +100,8 @@ var TgShow = (function() {
     var b = $show.attr('data-tg-bm') || $show.parent().attr('data-tg-bm');
     if (b && window.localStorage) {
       var h = $show.attr('data-tg-head');
-      localStorage[h + '/' + b + '.show'] = $img.attr('src');
+      try { localStorage[h + '/' + b + '.show'] = $img.attr('src'); }
+      catch (ex) {}
     }
 
     // display 'location'
@@ -148,9 +149,12 @@ var TgShow = (function() {
 
     var b = $show.attr('data-tg-bm') || $show.parent().attr('data-tg-bm');
     if (b && window.localStorage) {
-      var h = $show.attr('data-tg-head');
-      var src = localStorage[h + '/' + b + '.show'];
-      TgShow.show($thumbs.find('img[src="' + src + '"]'));
+      try {
+        var h = $show.attr('data-tg-head');
+        var src = localStorage[h + '/' + b + '.show'];
+        TgShow.show($thumbs.find('img[src="' + src + '"]'));
+      }
+      catch (ex) {}
     }
 
     if ($thumbs.find('.selected').length < 1) {
