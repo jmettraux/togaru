@@ -78,14 +78,17 @@ a {
     background-color: rgba(255, 255, 255, 1.0);
     padding-top: 14px;
     padding-left: 12px;
-    padding-right: 63px;
+    padding-right: 35px;
     font-size: 130%;
   }
   .center {
+    letter-spacing: -1px;
+    font-size: 91%;
     color: light-grey;
     a {
+      margin: -1px;
       padding: 3px 7px;
-      padding-top: 21px;
+      padding-top: 23px;
       background-color: rgba(255, 255, 255, 1.0);
       cursor: pointer;
     }
