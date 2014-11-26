@@ -62,7 +62,7 @@ var TgShow = (function() {
 
     var $ts = $show.find('.thumbs');
     var wh = $(window).height();
-    var src = $img.prop('src');
+    var src = $img.attr('src');
     var sot = $show.offset().top;
     var sh = wh - sot;
     var ih = sh > IMAGE_MAX_HEIGHT ? IMAGE_MAX_HEIGHT : sh;
@@ -74,9 +74,11 @@ var TgShow = (function() {
       "margin-top": '' + ((sh - ih) / 2) + 'px'
     });
 
-    $show.children('img').each(function(i, e) {
-      if (e.src === src) $(e).css('display', 'block');
-      else $(e).css('display', 'none');
+    $show.children('img, .text').each(function(i, e) {
+      var $e = $(e);
+      $e.css(
+        'display',
+        (($e.attr('data-src') || $e.attr('src')) === src) ? 'block' : 'none');
     });
 
     $ts.find('img').removeClass('selected');
@@ -120,8 +122,10 @@ var TgShow = (function() {
 
     $show.append('<div class="thumbs"></div>');
     var $thumbs = $show.find('.thumbs');
-    $show.find('img').each(function(i, e) {
-      $thumbs.append('<img src="' + $(e).prop('src') + '" />');
+    $show.children('img, .text').each(function(i, e) {
+      var $e = $(e);
+      var src = $e.attr('data-src') || $e.attr('src');
+      $thumbs.append('<img src="' + src + '" />');
     });
 
     if ( ! $show.is('.text')) {

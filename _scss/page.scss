@@ -222,7 +222,7 @@ $header_height: 63px;
   //z-index: -1;
   overflow: hidden;
   @include user-select(none);
-  img {
+  & > img {
     padding-top: 10px;
     display: none;
     margin: auto;
@@ -273,9 +273,28 @@ div[data-tg-bm="wedding"] .show.text {
 div[data-tg-bm="wedding"] .head .text {
   font-size: 84%;
 }
-//.show > div.text {
-//  display: none;
-//}
+.show > div.text {
+  display: none;
+  width: 56%;
+  margin: 1em auto;
+  letter-spacing: 0.7px;
+  line-height: 1.1;
+  text-align: center;
+  img.father {
+    float: left;
+    width: 378px;
+    margin-right: 2em;
+  }
+  p {
+    margin-bottom: 0.7em;
+  }
+  hr {
+    opacity: 0.2;
+  }
+}
+.show .subtext {
+  margin-top: 0.7em;
+}
 
 .zoom {
   position: absolute;
