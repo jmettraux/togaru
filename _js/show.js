@@ -175,6 +175,10 @@ var TgShow = (function() {
     $show.each(function(i, e) {
       self.initShow($(e));
     });
+    $show.children('img').each(function(i, e) {
+      //$(e).css('cursor', '-webkit-zoom-in');
+      $(e).css('cursor', 'pointer');
+    });
     $show.children('img').on('click', function(ev) {
       self.zoom($(ev.target));
     });
