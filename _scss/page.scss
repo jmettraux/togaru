@@ -275,25 +275,27 @@ div[data-tg-bm="wedding"] .head .text {
 }
 .show > div.text {
   display: none;
-  width: 56%;
-  margin: 1em auto;
-  letter-spacing: 0.7px;
-  line-height: 1.1;
-  text-align: center;
-  img.father {
-    float: left;
-    width: 378px;
-    margin-right: 2em;
-  }
+  width: 80%;
+  margin: 2em auto;
+  //letter-spacing: 0.7px;
+  //line-height: 1.1;
+  //text-align: center;
   p {
     margin-bottom: 0.7em;
   }
-  hr {
-    opacity: 0.2;
+  img.father {
+    //float: left;
+    width: 190px;
+    margin-right: 0.9em;
+    display: inline-block;
   }
-}
-.show .subtext {
-  margin-top: 0.7em;
+  .pane {
+    font-size: 90%;
+    vertical-align: top;
+    width: 28%;
+    //background-color: grey;
+    display: inline-block;
+  }
 }
 
 .zoom {
