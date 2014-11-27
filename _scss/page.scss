@@ -286,6 +286,7 @@ div[data-tg-bm="wedding"] .head .text {
   img.father {
     //float: left;
     width: 190px;
+    margin-left: 1em;
     margin-right: 0.9em;
     display: inline-block;
   }
@@ -308,6 +309,9 @@ div[data-tg-bm="wedding"] .head .text {
     margin-top: 3px;
     height: 99%;
   }
+}
+.zoomable {
+  cursor: pointer;
 }
 
 .location {
