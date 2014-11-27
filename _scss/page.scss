@@ -254,25 +254,27 @@ $header_height: 63px;
   }
 }
 
-.show.text {
-  //margin: auto;
-  margin-top: 2em;
-  text-align: center;
+div[data-tg-bm="wedding"] .show.text {
+  width: 70%;
+  margin: 2em auto;
   h1 {
     font-size: 170%;
     margin-bottom: 1em;
+    text-align: center;
+  }
+  img {
+    float: left;
+    margin: 0 1em;
+    margin-bottom: 0.7em;
+    width: 210px;
   }
   p {
+    letter-spacing: 0.7px;
+    line-height: 1.1;
     margin-bottom: 0.5em;
   }
 }
-div[data-tg-bm="wedding"] .show.text {
-  width: 50%;
-  margin-left: 25%;
-}
-div[data-tg-bm="wedding"] .head .text {
-  font-size: 84%;
-}
+
 .show > div.text {
   display: none;
   width: 80%;
