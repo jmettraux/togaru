@@ -41,10 +41,12 @@ var TgShow = (function() {
       return;
     }
 
+    var $sel = $sel.filter(':visible');
+    if ($sel.length < 1) $sel = $('.zoomable:visible');
     if ($sel.length < 1) return;
 
     window.scrollTo(0, 0);
-    var $sel = $sel.filter(':visible');
+
     var src = $sel.attr('src');
     $('body').append('<div class="zoom"><img src="' + src + '" /></div>');
     var $w = $(window);
